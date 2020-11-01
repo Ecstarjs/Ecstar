@@ -1,3 +1,3 @@
 import { Client } from 'ecstar';
 
-new Client().login();
+new Client({ prefix: '!!' }).login();
