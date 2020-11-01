@@ -8,17 +8,18 @@
   "license": "MIT",
   "scripts": {
     "build": "ttsc --project tsconfig.build.json",
-    "dev": "nodemon --watch src --watch examples --ext ts --exec 'ts-node --compiler ttypescript examples/index'"
+    "dev": "nodemon --watch src --watch examples --ext ts --exec 'ttsc && node dist/examples'"
   },
   "dependencies": {
+    "chokidar": "^3.4.3",
     "discord.js": "^12.4.1"
   },
   "devDependencies": {
     "@mouse_484/eslint-config-node": "https://eslint-config.mouse484.tk/Node?next",
     "@mouse_484/eslint-config-prettier": "https://eslint-config.mouse484.tk/Prettier?next",
     "@mouse_484/eslint-config-typescript": "https://eslint-config.mouse484.tk/TypeScript?next",
-    "@types/ws": "^7.2.7",
     "@types/node": "^14.11.8",
+    "@types/ws": "^7.2.7",
     "eslint": "^7.9.0",
     "nodemon": "^2.0.6",
     "prettier": "^2.1.1",
