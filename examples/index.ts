@@ -1,2 +1,3 @@
-import { Ecstar } from 'ecstar';
-console.log(Ecstar);
+import { Client } from 'ecstar';
+
+new Client().login();

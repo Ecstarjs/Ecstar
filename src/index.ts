@@ -1,1 +1,1 @@
-export const Ecstar = 'Ecstar';
+export { Client } from './Client';
