@@ -1,0 +1,30 @@
+{
+  "name": "ecstar",
+  "version": "0.0.0",
+  "description": "Ecstar next",
+  "main": "dist/index.js",
+  "repository": "https://github.com/Ecstar-js/Ecstar.git",
+  "author": "mouse_484",
+  "license": "MIT",
+  "scripts": {
+    "build": "ttsc --project tsconfig.build.json",
+    "dev": "ts-node --compiler ttypescript examples/index"
+  },
+  "dependencies": {
+    "discord.js": "^12.4.1"
+  },
+  "devDependencies": {
+    "@mouse_484/eslint-config-node": "https://eslint-config.mouse484.tk/Node?next",
+    "@mouse_484/eslint-config-prettier": "https://eslint-config.mouse484.tk/Prettier?next",
+    "@mouse_484/eslint-config-typescript": "https://eslint-config.mouse484.tk/TypeScript?next",
+    "@types/ws": "^7.2.7",
+    "@types/node": "^14.11.8",
+    "eslint": "^7.9.0",
+    "nodemon": "^2.0.6",
+    "prettier": "^2.1.1",
+    "ts-node": "^9.0.0",
+    "ttypescript": "^1.5.12",
+    "typescript": "^4.0.2",
+    "typescript-transform-paths": "^2.0.1"
+  }
+}

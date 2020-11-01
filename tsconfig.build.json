@@ -1,0 +1,21 @@
+{
+  "compilerOptions": {
+    "target": "es2019",
+    "strict": true,
+    "declaration": true,
+    "outDir": "dist",
+    "declarationDir": "dist/type",
+    "module": "commonjs",
+    "esModuleInterop": true,
+    "moduleResolution": "node",
+    "baseUrl": ".",
+    "paths": {
+      "ecstar": ["src"]
+    },
+    "plugins": [
+      { "transform": "typescript-transform-paths" },
+      { "transform": "typescript-transform-paths", "afterDeclarations": true }
+    ]
+  },
+  "include": ["src/**/*.ts"]
+}
