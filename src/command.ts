@@ -1,20 +1,4 @@
-import {
-  //   APIMessage,
-  Message,
-  //   MessageAdditions,
-  //   MessageOptions,
-  //   Snowflake,
-  //   StringResolvable,
-} from 'discord.js';
-
-export type Context = {
-  message: Message;
-  args: string[];
-  //   send: (
-  //     content: StringResolvable | APIMessage,
-  //     options?: (MessageOptions | MessageAdditions) & { channelid?: Snowflake }
-  //   ) => void;
-};
+import { Context } from './context';
 
 export type commandOptions = {
   name: string;
