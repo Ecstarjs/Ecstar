@@ -3,6 +3,7 @@ import {
   ClientOptions as DiscordClientOptions,
   Message,
 } from 'discord.js';
+import { context } from 'ecstar';
 import { Store } from './lib/Store';
 import { commandOptions } from './command';
 
@@ -12,24 +13,21 @@ interface EcstarOptions extends DiscordClientOptions {
 
 export class Client extends DiscordClient {
   readonly commands = new Store<commandOptions>('commands');
+  readonly options!: EcstarOptions;
   constructor(options: EcstarOptions) {
     super(options);
 
     super.once('ready', () => {
       console.log('ready');
     });
-    super.on('message', async (message: Message) => {
+    super.on('message', (message: Message) => {
       if (!message.content.startsWith(options.prefix)) return;
 
-      const [commandName, ...args] = message.content
-        .slice(options.prefix.length)
-        .split(' ');
+      const ctx = context(this, message);
 
-      const command = this.commands.get(commandName);
+      const command = this.commands.get(ctx.name);
 
-      if (!command) return;
-
-      if (command?.render) command.render({ message, args });
+      if (command?.render) command.render(ctx);
     });
   }
 }
