@@ -1,5 +1,6 @@
 import { Client } from 'ecstar';
 import { APIMessage, Message, StringResolvable } from 'discord.js';
+import split from 'split-string';
 
 export interface Context {
   name: string;
@@ -9,9 +10,13 @@ export interface Context {
 }
 
 export const context = (client: Client, message: Message): Context => {
-  const [commandName, ...args] = message.content
-    .slice(client.options.prefix.length)
-    .split(' ');
+  const [prefixAndCommandName, ...args] = split(message.content, {
+    separator: ' ',
+    quotes: ['"', "'", '`'],
+    // brackets: { '<@': '>' },
+  });
+
+  const commandName = prefixAndCommandName.slice(client.options.prefix.length);
 
   return {
     name: commandName,
