@@ -16,9 +16,9 @@
     "split-string": "^6.1.0"
   },
   "devDependencies": {
-    "@mouse_484/eslint-config-node": "https://eslint-config.mouse484.tk/Node?next",
-    "@mouse_484/eslint-config-prettier": "https://eslint-config.mouse484.tk/Prettier?next",
-    "@mouse_484/eslint-config-typescript": "https://eslint-config.mouse484.tk/TypeScript?next",
+    "@mouse_484/eslint-config-node": "https://eslint-config.mouse484.vercel.app/Node?next",
+    "@mouse_484/eslint-config-prettier": "https://eslint-config.mouse484.vercel.app/Prettier?next",
+    "@mouse_484/eslint-config-typescript": "https://eslint-config.mouse484.vercel.app/TypeScript?next",
     "@types/node": "^14.11.8",
     "@types/ws": "^7.2.7",
     "eslint": "^7.9.0",
