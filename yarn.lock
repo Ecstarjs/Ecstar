@@ -53,29 +53,29 @@
     minimatch "^3.0.4"
     strip-json-comments "^3.1.1"
 
-"@mouse_484/eslint-config-base@https://eslint-config.mouse484.tk/Base?next":
+"@mouse_484/eslint-config-base@https://eslint-config.mouse484.vercel.app/Base?next":
   version "0.0.0"
-  resolved "https://eslint-config.mouse484.tk/Base?next#da8542d6d87e138f30ceeab83444ebc54776b319"
+  resolved "https://eslint-config.mouse484.vercel.app/Base?next#a42740276752478a22a30e234ee64a41d830db79"
 
-"@mouse_484/eslint-config-node@https://eslint-config.mouse484.tk/Node?next":
+"@mouse_484/eslint-config-node@https://eslint-config.mouse484.vercel.app/Node?next":
   version "0.0.0"
-  resolved "https://eslint-config.mouse484.tk/Node?next#063d7688d56c00171e5f7856cfa7eae0259405be"
+  resolved "https://eslint-config.mouse484.vercel.app/Node?next#1a65a1035e23c1f3929b7007198bb7d510a18d7b"
   dependencies:
-    "@mouse_484/eslint-config-base" "https://eslint-config.mouse484.tk/Base?next"
+    "@mouse_484/eslint-config-base" "https://eslint-config.mouse484.vercel.app/Base?next"
 
-"@mouse_484/eslint-config-prettier@https://eslint-config.mouse484.tk/Prettier?next":
+"@mouse_484/eslint-config-prettier@https://eslint-config.mouse484.vercel.app/Prettier?next":
   version "0.0.0"
-  resolved "https://eslint-config.mouse484.tk/Prettier?next#54801df4172c2b8e44e82dadb1493e24f78431b0"
+  resolved "https://eslint-config.mouse484.vercel.app/Prettier?next#65cde5bbe15eaeddba1f574839bf84c2eb5ed0db"
   dependencies:
     eslint-config-prettier "^6.11.0"
     eslint-plugin-prettier "^3.1.4"
     prettier "^2.1.1"
 
-"@mouse_484/eslint-config-typescript@https://eslint-config.mouse484.tk/TypeScript?next":
+"@mouse_484/eslint-config-typescript@https://eslint-config.mouse484.vercel.app/TypeScript?next":
   version "0.0.0"
-  resolved "https://eslint-config.mouse484.tk/TypeScript?next#503908c957b0362cc034c0f438da3850cf0d81cc"
+  resolved "https://eslint-config.mouse484.vercel.app/TypeScript?next#baaeebee1c02e86de2cc3f7f61da7e873d4bd800"
   dependencies:
-    "@mouse_484/eslint-config-base" "https://eslint-config.mouse484.tk/Base?next"
+    "@mouse_484/eslint-config-base" "https://eslint-config.mouse484.vercel.app/Base?next"
     "@typescript-eslint/eslint-plugin" "^3.10.1"
     "@typescript-eslint/parser" "^3.10.1"
 
