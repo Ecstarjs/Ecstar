@@ -1,11 +1,13 @@
 import {
   Client as DiscordClient,
+  ClientEvents,
   ClientOptions as DiscordClientOptions,
   Message,
 } from 'discord.js';
 import { context } from 'ecstar';
 import { Store } from 'ecstar/Store';
 import { commandOptions } from 'ecstar/command';
+import { eventOptions } from 'ecstar/event';
 
 interface EcstarOptions extends DiscordClientOptions {
   prefix: string;
@@ -13,13 +15,16 @@ interface EcstarOptions extends DiscordClientOptions {
 
 export class Client extends DiscordClient {
   readonly commands = new Store<commandOptions>('commands');
+  readonly events = new Store<eventOptions>('events');
   readonly options!: EcstarOptions;
   constructor(options: EcstarOptions) {
     super(options);
 
-    super.once('ready', () => {
-      console.log('ready');
+    super.on('*', (name: keyof ClientEvents, ...args: unknown[]) => {
+      const event = this.events.get(name);
+      if (event?.run) event.run(args);
     });
+
     super.on('message', (message: Message) => {
       if (!message.content.startsWith(options.prefix)) return;
 
@@ -29,5 +34,8 @@ export class Client extends DiscordClient {
 
       if (command?.render) command.render(ctx);
     });
+  }
+  emit(name: string, ...args: unknown[]): boolean {
+    return super.emit('*', name, ...args);
   }
 }
