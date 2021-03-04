@@ -4,8 +4,8 @@ import {
   Message,
 } from 'discord.js';
 import { context } from 'ecstar';
-import { Store } from './lib/Store';
-import { commandOptions } from './command';
+import { Store } from 'ecstar/Store';
+import { commandOptions } from 'ecstar/command';
 
 interface EcstarOptions extends DiscordClientOptions {
   prefix: string;
