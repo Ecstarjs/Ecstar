@@ -8,7 +8,8 @@
   "license": "MIT",
   "scripts": {
     "build": "ttsc --project tsconfig.build.json",
-    "dev": "nodemon --watch src --watch examples --ext ts --exec 'ts-node -r tsconfig-paths/register examples'"
+    "dev": "nodemon --watch src --watch examples --ext ts --exec 'ts-node -r tsconfig-paths/register examples'",
+    "fmt": "prettier --write ."
   },
   "dependencies": {
     "chokidar": "^3.4.3",
