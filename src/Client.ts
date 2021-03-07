@@ -6,16 +6,14 @@ import {
 } from 'discord.js';
 import { context } from 'ecstar';
 import { Store } from 'ecstar/Store';
-import { commandOptions } from 'ecstar/command';
-import { eventOptions } from 'ecstar/event';
 
 interface EcstarOptions extends DiscordClientOptions {
   prefix: string;
 }
 
 export class Client extends DiscordClient {
-  readonly commands = new Store<commandOptions>('commands');
-  readonly events = new Store<eventOptions>('events');
+  readonly commands = new Store('command');
+  readonly events = new Store('event');
   readonly options!: EcstarOptions;
   constructor(options: EcstarOptions) {
     super(options);
