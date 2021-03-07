@@ -1,11 +1,27 @@
 import { watch } from 'chokidar';
 import path from 'path';
 
-export class Store<T> extends Map<string, T> {
-  constructor(type: string) {
+import { Structures } from 'ecstar/structures';
+
+import { commandOptions } from 'ecstar/command';
+import { eventOptions } from 'ecstar/event';
+import { argumentOptions } from 'ecstar/argument';
+
+export type StoreImported<T extends Structures> = T extends 'command'
+  ? commandOptions
+  : T extends 'event'
+  ? eventOptions
+  : T extends 'argument'
+  ? argumentOptions
+  : never;
+
+export class Store<T extends Structures> extends Map<string, StoreImported<T>> {
+  constructor(type: T) {
     super();
 
-    const directorypath = this.getDirectoryPath(type);
+    const directoryName = type + 's';
+
+    const directorypath = this.getDirectoryPath(directoryName);
     if (!directorypath) return;
     watch(directorypath).on('add', (path: string) => this.import(path));
   }

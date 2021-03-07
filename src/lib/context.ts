@@ -1,8 +1,9 @@
 import { Client } from 'ecstar';
 import { APIMessage, Message, StringResolvable } from 'discord.js';
 import { parser } from 'ecstar/parser';
+import { Structures } from 'ecstar/structures';
 
-export type ContextType = 'command' | 'event' | 'argument' | 'unknown';
+type ContextType = Structures | 'unknown';
 export type Context<T extends ContextType> = T extends 'command'
   ? CommandContext
   : T extends 'event'
