@@ -2,34 +2,41 @@ import { Client } from 'ecstar';
 import { APIMessage, Message, StringResolvable } from 'discord.js';
 import { parser } from 'ecstar/parser';
 
-export type ContextType = 'command' | 'event' | 'unknown';
+export type ContextType = 'command' | 'event' | 'argument' | 'unknown';
 export type Context<T extends ContextType> = T extends 'command'
   ? CommandContext
   : T extends 'event'
   ? EventContext
+  : T extends 'argument'
+  ? ArgumentContext
   : never;
 
-export interface ContextBase {
+interface ContextBase {
   name: string;
   type: ContextType;
   client: Client;
 }
 
-export interface CommandContext extends ContextBase {
+interface CommandContext extends ContextBase {
   type: 'command';
   message: Message;
   args: string[];
   send(content: StringResolvable | APIMessage): Promise<Message>;
 }
 
-export interface EventContext extends ContextBase {
+interface EventContext extends ContextBase {
   type: 'event';
   callback: unknown[];
 }
 
+interface ArgumentContext extends ContextBase {
+  type: 'argument';
+}
+
 export type contextFunc = {
-  (client: Client, message: Message): CommandContext;
-  (client: Client, name: string, callback: unknown[]): EventContext;
+  (client: Client, message: Message): Context<'command'>;
+  (client: Client, name: string, callback: unknown[]): Context<'event'>;
+  (client: Client, name: string): Context<'argument'>;
 };
 
 export const context: contextFunc = (
@@ -42,7 +49,7 @@ export const context: contextFunc = (
     const message = arg1;
     const { commandName, args } = parser(client, message.cleanContent);
 
-    const ctx: CommandContext = {
+    const ctx: Context<'command'> = {
       name: commandName,
       type: 'command',
       client,
@@ -53,12 +60,19 @@ export const context: contextFunc = (
       },
     };
     return ctx;
-  } else {
-    const ctx: EventContext = {
+  } else if (arg2) {
+    const ctx: Context<'event'> = {
       name: arg1,
       type: 'event',
       client,
       callback: arg2 || [],
+    };
+    return ctx;
+  } else {
+    const ctx: Context<'argument'> = {
+      name: arg1,
+      type: 'argument',
+      client,
     };
     return ctx;
   }
