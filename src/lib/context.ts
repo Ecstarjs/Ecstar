@@ -12,6 +12,7 @@ export type Context<T extends ContextType> = T extends 'command'
 export interface ContextBase {
   name: string;
   type: ContextType;
+  client: Client;
 }
 
 export interface CommandContext extends ContextBase {
@@ -41,20 +42,24 @@ export const context: contextFunc = (
     const message = arg1;
     const { commandName, args } = parser(client, message.cleanContent);
 
-    return {
+    const ctx: CommandContext = {
       name: commandName,
       type: 'command',
+      client,
       message,
       args,
       send(content) {
         return message.channel.send(content);
       },
-    } as CommandContext;
+    };
+    return ctx;
   } else {
-    return {
+    const ctx: EventContext = {
       name: arg1,
       type: 'event',
+      client,
       callback: arg2 || [],
-    } as EventContext;
+    };
+    return ctx;
   }
 };
