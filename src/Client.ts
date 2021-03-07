@@ -23,16 +23,17 @@ export class Client extends DiscordClient {
     super.on('*', (name: keyof ClientEvents, ...args: unknown[]) => {
       const event = this.events.get(name);
       if (event?.run) event.run(args);
-    });
 
-    super.on('message', (message: Message) => {
-      if (!message.content.startsWith(options.prefix)) return;
+      if (name === 'message') {
+        const [message] = args as Message[];
+        if (!message.content.startsWith(options.prefix)) return;
 
-      const ctx = context(this, message);
+        const ctx = context(this, message);
 
-      const command = this.commands.get(ctx.name);
+        const command = this.commands.get(ctx.name);
 
-      if (command?.render) command.render(ctx);
+        if (command?.render) command.render(ctx);
+      }
     });
   }
   emit(name: string, ...args: unknown[]): boolean {
