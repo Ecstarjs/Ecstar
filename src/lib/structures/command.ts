@@ -3,7 +3,7 @@ import { Context } from '../context';
 export type commandOptions = {
   name: string;
   aliases?: string[];
-  render?(context: Context): void;
+  render?(context: Context<'command'>): void;
 };
 
 // methods: (client) => commandOptions
