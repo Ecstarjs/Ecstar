@@ -22,7 +22,10 @@ export class Client extends DiscordClient {
 
     super.on('*', (name: keyof ClientEvents, ...args: unknown[]) => {
       const event = this.events.get(name);
-      if (event?.run) event.run(args);
+
+      const ctx = context(this, name, args);
+
+      if (event?.run) event.run(ctx);
 
       if (name === 'message') {
         const [message] = args as Message[];
