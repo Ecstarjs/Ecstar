@@ -1,9 +1,9 @@
-import { Context } from '../context';
+import { CommandContext } from 'ecstar/context/command';
 
 export type commandOptions = {
   name: string;
   aliases?: string[];
-  render?(context: Context<'command'>): void;
+  render?(context: CommandContext): void;
 };
 
 // methods: (client) => commandOptions
