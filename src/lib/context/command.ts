@@ -3,11 +3,12 @@ import { APIMessage, Message, StringResolvable } from 'discord.js';
 
 import { ContextBase } from 'ecstar/context';
 import { parser } from 'ecstar/parser';
+import { getArgs, argsType, TypeList } from 'ecstar/getArgs';
 
 export interface CommandContext extends ContextBase {
   type: 'command';
   message: Message;
-  args: string[];
+  getArgs<T extends (keyof TypeList)[]>(types: T): argsType<T>;
   send(content: StringResolvable | APIMessage): Promise<Message>;
 }
 
@@ -22,7 +23,7 @@ export const commandContext = (
     type: 'command',
     client,
     message,
-    args,
+    getArgs: getArgs(args),
     send(content) {
       return message.channel.send(content);
     },

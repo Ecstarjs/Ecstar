@@ -14,7 +14,8 @@
   "dependencies": {
     "chokidar": "^3.4.3",
     "discord.js": "^12.4.1",
-    "split-string": "^6.1.0"
+    "split-string": "^6.1.0",
+    "ts-toolbelt": "^9.6.0"
   },
   "devDependencies": {
     "@mouse_484/eslint-config-node": "https://eslint-config.mouse484.vercel.app/Node?next",

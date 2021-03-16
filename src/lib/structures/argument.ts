@@ -1,4 +1,4 @@
-import { ArgumentContext } from "ecstar/context/argument";
+import { ArgumentContext } from 'ecstar/context/argument';
 
 export interface argumentOptions {
   name: string;
