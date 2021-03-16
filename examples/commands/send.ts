@@ -2,7 +2,8 @@ import { command } from 'ecstar';
 
 export default command(() => ({
   name: 'send',
-  render({ send, args }) {
+  render({ send, getArgs }) {
+    const args = getArgs(['string']);
     send(args);
   },
 }));

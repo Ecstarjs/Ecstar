@@ -8,7 +8,6 @@ import { argumentContext } from 'ecstar/context/argument';
 
 type ContextType = Structures | 'unknown';
 
-
 export interface ContextBase {
   name: string;
   type: ContextType;
@@ -30,6 +29,6 @@ export const context: contextFunc = (
   } else if (arg2) {
     return eventContext(client, arg1, arg2);
   } else {
-    return argumentContext(client, arg1)
+    return argumentContext(client, arg1);
   }
 };

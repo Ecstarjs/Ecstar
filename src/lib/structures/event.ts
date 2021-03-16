@@ -1,5 +1,5 @@
 import { ClientEvents } from 'discord.js';
-import { EventContext } from "ecstar/context/event"
+import { EventContext } from 'ecstar/context/event';
 
 export type eventOptions = {
   name: keyof ClientEvents;
