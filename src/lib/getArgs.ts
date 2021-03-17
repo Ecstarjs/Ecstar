@@ -4,9 +4,11 @@ export type TypeList = {
   boolean: boolean;
 };
 
+type a = keyof TypeList
+
 export type argsType<
   types extends { [key: string]: keyof TypeList },
-  > = { [K in keyof types]: types[K] }
+  > = { [K in keyof types]: TypeList[types[K]] }
 
 export const getArgs = (args: string[]): typeof func => {
   const func = <T extends { [key: string]: keyof TypeList }>(types: T) => {
