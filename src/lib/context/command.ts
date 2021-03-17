@@ -8,7 +8,7 @@ import { getArgs, argsType, TypeList } from 'ecstar/getArgs';
 export interface CommandContext extends ContextBase {
   type: 'command';
   message: Message;
-  getArgs<T extends (keyof TypeList)[]>(types: T): argsType<T>;
+  getArgs<T extends { [key: string]: keyof TypeList }>(types: T): argsType<T>;
   send(content: StringResolvable | APIMessage): Promise<Message>;
 }
 
