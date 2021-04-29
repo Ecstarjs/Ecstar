@@ -1,11 +1,17 @@
 import { ClientEvents } from 'discord.js';
 import { EventContext } from 'ecstar/context/event';
 
-export type eventOptions = {
-  name: keyof ClientEvents;
-  run(context: EventContext): void;
+export interface EcstarEvents extends ClientEvents {
+  unknown: unknown[];
+}
+
+export type eventOptions<T extends keyof EcstarEvents = 'unknown'> = {
+  name: T;
+  run(context: EventContext, callback: EcstarEvents[T]): void;
 };
 
-export const event = (methods: () => eventOptions): eventOptions => {
+export const event = <T extends keyof EcstarEvents>(
+  methods: () => eventOptions<T>
+): eventOptions<T> => {
   return methods();
 };

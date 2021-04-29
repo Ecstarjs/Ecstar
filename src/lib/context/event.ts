@@ -3,18 +3,12 @@ import { ContextBase } from 'ecstar/context';
 
 export interface EventContext extends ContextBase {
   type: 'event';
-  callback: unknown[];
 }
 
-export const eventContext = (
-  client: Client,
-  name: string,
-  callback: unknown[]
-): EventContext => {
+export const eventContext = (client: Client, name: string): EventContext => {
   return {
     name,
     type: 'event',
     client,
-    callback,
   };
 };

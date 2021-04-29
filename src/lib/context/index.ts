@@ -20,15 +20,14 @@ export type contextFunc = typeof commandContext &
 
 export const context: contextFunc = (
   client: Client,
-  arg1: Message | string,
-  arg2?: unknown[]
+  arg: Message | string
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
 ): any => {
-  if (arg1 instanceof Message) {
-    return commandContext(client, arg1);
-  } else if (arg2) {
-    return eventContext(client, arg1, arg2);
+  if (arg instanceof Message) {
+    return commandContext(client, arg);
+  } else if (typeof arg === 'string') {
+    return eventContext(client, arg);
   } else {
-    return argumentContext(client, arg1);
+    return argumentContext(client, arg);
   }
 };

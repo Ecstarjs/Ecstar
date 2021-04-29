@@ -21,9 +21,10 @@ export class Client extends DiscordClient {
     super.on('*', (name: keyof ClientEvents, ...args: unknown[]) => {
       const event = this.events.get(name);
 
-      const ctx = context(this, name, args);
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      const ctx = context(this, name);
 
-      if (event?.run) event.run(ctx);
+      if (event?.run) event.run(ctx, args);
 
       if (name === 'message') {
         const [message] = args as Message[];
