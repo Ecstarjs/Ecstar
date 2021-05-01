@@ -4,15 +4,14 @@ import {
 } from 'discord.js';
 import { Store } from 'ecstar/Store';
 import { plugin } from 'ecstar/plugin';
-import Log from 'ecstar/plugins/Log';
-import EventHandler from 'ecstar/plugins/EventHandler';
+import { plugins } from 'ecstar/plugins';
 
 interface EcstarOptions extends DiscordClientOptions {
   prefix: string;
 }
 
 class Client extends DiscordClient {
-  static plugins: plugin[] = [Log, EventHandler];
+  static plugins: plugin[] = [];
 
   readonly commands = new Store('command');
   readonly events = new Store('event');
@@ -20,7 +19,7 @@ class Client extends DiscordClient {
   constructor(options: EcstarOptions) {
     super(options);
 
-    Client.plugins.forEach((plugin) => {
+    [...plugins, ...Client.plugins].forEach((plugin) => {
       plugin.run(this);
     });
   }

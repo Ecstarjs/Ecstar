@@ -11,7 +11,8 @@
     "baseUrl": ".",
     "paths": {
       "ecstar": ["src"],
-      "ecstar/*": ["src/lib/*", "src/lib/structures/*"]
+      "ecstar/*": ["src/lib/*", "src/lib/structures/*"],
+      "$plugin/*": ["src/default/plugins/*"]
     },
     "plugins": [
       {
