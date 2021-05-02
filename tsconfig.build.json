@@ -1,0 +1,28 @@
+{
+  "compilerOptions": {
+    "target": "es2019",
+    "strict": true,
+    "declaration": true,
+    "outDir": "dist",
+    "declarationDir": "dist/type",
+    "module": "commonjs",
+    "esModuleInterop": true,
+    "moduleResolution": "node",
+    "baseUrl": ".",
+    "paths": {
+      "ecstar": ["src"],
+      "ecstar/*": ["src/lib/*", "src/lib/structures/*"],
+      "$plugin/*": ["src/default/plugins/*"]
+    },
+    "plugins": [
+      {
+        "transform": "typescript-transform-paths"
+      },
+      {
+        "transform": "typescript-transform-paths",
+        "afterDeclarations": true
+      }
+    ]
+  },
+  "include": ["src/**/*.ts"]
+}
