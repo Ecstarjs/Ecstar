@@ -11,13 +11,15 @@
     "dev": "nodemon --watch src --watch examples --ext ts --exec 'ts-node -r tsconfig-paths/register examples'",
     "fmt": "prettier --write .",
     "semantic-release": "semantic-release",
-    "commit": "commitizen"
+    "commit": "commitizen",
+    "document": "typedoc src"
   },
   "dependencies": {
     "chokidar": "^3.4.3",
     "consola": "^2.15.3",
     "discord.js": "^12.4.1",
-    "split-string": "^6.1.0"
+    "split-string": "^6.1.0",
+    "typedoc": "^0.20.36"
   },
   "devDependencies": {
     "@mouse_484/eslint-config-node": "https://eslint-config.mouse484.vercel.app/Node?next",
