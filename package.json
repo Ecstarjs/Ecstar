@@ -1,6 +1,6 @@
 {
   "name": "ecstar",
-  "version": "0.0.0-development",
+  "version": "4.0.0",
   "description": "Ecstar next",
   "main": "src/index.ts",
   "repository": "https://github.com/Ecstar-js/Ecstar.git",
