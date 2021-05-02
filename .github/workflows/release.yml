@@ -23,6 +23,8 @@ jobs:
         run: yarn install --frozen-lockfile
       - name: Build document
         run: yarn document
+      - name: Compile TypeScript
+        run: yarn build
       - name: Release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
