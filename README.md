@@ -8,7 +8,7 @@ Ecstar is the easiest framework [Discord.js](https://github.com/discordjs/discor
 
 ## 📖Document
 
-Coming soon
+[ecstar.js.org](https://ecstar.js.org/)
 
 ## 📥Installation
 
