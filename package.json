@@ -44,8 +44,11 @@
     "branches": [
       "main"
     ],
-    "plugins": [
-      "@qiwi/semantic-release-gh-pages-plugin"
+    "plugins":  [
+      "@qiwi/semantic-release-gh-pages-plugin",
+      {
+        "pullTagsBranch": ""
+      }
     ]
   },
   "config": {
