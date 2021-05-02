@@ -14,7 +14,7 @@ jobs:
           node-version: 12
       - run: yarn install
       - name: TypeDoc
-        run: yarn run typedoc
+        run: yarn run document
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
