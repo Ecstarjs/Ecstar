@@ -25,7 +25,7 @@ export const commandContext = (
   client: Client,
   message: Message
 ): CommandContext => {
-  const { commandName, args } = parser(client, message.cleanContent);
+  const { commandName, args } = parser(client, message.content);
 
   return {
     name: commandName,
