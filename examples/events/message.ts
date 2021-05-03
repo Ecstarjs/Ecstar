@@ -2,7 +2,7 @@ import { event } from 'ecstar';
 
 export default event(() => ({
   name: 'message',
-  run({ send}, [message]) {
+  run({ send }, [message]) {
     if (message.author.bot) return;
 
     send(
