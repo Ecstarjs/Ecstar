@@ -15,6 +15,10 @@ export default event(() => ({
 
     const command = client.commands.get(ctx.name);
 
+    if (command?.guildOnly && !message.guild) {
+      return message.channel.send('Can only be used with guild');
+    }
+
     if (command?.render) command.render(ctx);
   },
 }));
