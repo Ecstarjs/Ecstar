@@ -1,8 +1,10 @@
-import { event, context } from 'ecstar';
+import { context, event } from 'ecstar';
 
 export default event(() => ({
   name: 'message',
   run({ client }, [message]) {
+    if (message.author.bot) return;
+
     if (
       !message.content.startsWith(client.options.prefix) &&
       !message.content.startsWith(`<@!${client.user?.id}>`)
