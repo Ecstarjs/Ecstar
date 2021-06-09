@@ -19,6 +19,20 @@ export default event(() => ({
       return message.channel.send('Can only be used with guild');
     }
 
+    if (command?.permissions) {
+      if (
+        command.permissions.bot &&
+        !message.guild?.me?.hasPermission(command.permissions.bot)
+      ) {
+        return message.channel.send('Bot does not have permissions.');
+      } else if (
+        command.permissions.user &&
+        !message.member?.hasPermission(command.permissions.user)
+      ) {
+        return message.channel.send('User does not have permissions.');
+      }
+    }
+
     if (command?.render) command.render(ctx);
   },
 }));
