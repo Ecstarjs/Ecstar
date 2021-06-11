@@ -1,4 +1,3 @@
-import { TextChannel } from 'discord.js';
 import { command } from 'ecstar';
 
 export default command(() => ({
@@ -9,9 +8,8 @@ export default command(() => ({
   },
   render({ message, getArgs }) {
     const { text } = getArgs({ text: 'string' });
-    (message.channel as TextChannel).edit(
-      { name: text },
-      'Ecstar editChannel test'
-    );
+    if (message.channel.type === 'text') {
+      message.channel.edit({ name: text }, 'Ecstar editChannel test');
+    }
   },
 }));
