@@ -4,8 +4,6 @@ export type TypeList = {
   boolean: boolean;
 };
 
-type a = keyof TypeList;
-
 export type argsType<types extends { [key: string]: keyof TypeList }> = {
   [K in keyof types]: TypeList[types[K]];
 };

@@ -10,7 +10,9 @@
   "scripts": {
     "build": "ttsc --project tsconfig.build.json",
     "dev": "nodemon --watch src --watch examples --ext ts --exec 'ts-node -r tsconfig-paths/register examples'",
+    "lint": "eslint --ext .ts .",
     "fmt": "prettier --write .",
+    "fix": "yarn run lint --fix",
     "semantic-release": "semantic-release",
     "commit": "commitizen",
     "document": "typedoc src"

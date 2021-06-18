@@ -2,7 +2,7 @@ import { command } from 'ecstar';
 
 export default command(() => ({
   name: 'ping',
-  render({ send, author }) {
+  render({ send }) {
     send('Pong');
   },
 }));
