@@ -22,7 +22,7 @@ yarn add ecstar
 
 ## 💬Usage
 
-See [esample](https://github.com/Ecstar-js/Ecstar/tree/main/examples)
+See [examples](https://github.com/Ecstar-js/Ecstar/tree/main/examples)
 
 ## 🎫License
 
