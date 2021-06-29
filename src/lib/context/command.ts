@@ -16,8 +16,9 @@ export interface CommandContext extends ContextBase {
   type: 'command';
   message: Message;
   author: User;
+  /** @deprecated Use 'args' directly instead */
   getArgs<T extends { [key: string]: keyof TypeList }>(types: T): argsType<T>;
-  args: parsed["args"],
+  args: parsed['args'];
   send(
     content: StringResolvable | APIMessage,
     channelID?: Snowflake
