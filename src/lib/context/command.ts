@@ -9,7 +9,7 @@ import {
 } from 'discord.js';
 
 import { ContextBase } from 'ecstar/context';
-import { parser } from 'ecstar/parser';
+import { parser, parsed } from 'ecstar/parser';
 import { getArgs, argsType, TypeList } from 'ecstar/getArgs';
 
 export interface CommandContext extends ContextBase {
@@ -17,6 +17,7 @@ export interface CommandContext extends ContextBase {
   message: Message;
   author: User;
   getArgs<T extends { [key: string]: keyof TypeList }>(types: T): argsType<T>;
+  args: parsed["args"],
   send(
     content: StringResolvable | APIMessage,
     channelID?: Snowflake
@@ -36,6 +37,7 @@ export const commandContext = (
     message,
     author: message.author,
     getArgs: getArgs(args),
+    args,
     send(content, id) {
       const channel = id
         ? (client.channels.cache.get(id) as TextChannel)
