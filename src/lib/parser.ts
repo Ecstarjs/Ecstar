@@ -39,19 +39,18 @@ type PType<T, N extends string> = T extends P.Parser<infer U>
   ? P.Node<N, U>
   : never;
 
-type ParseResult = P.Parser<
+type ParseResult =
   (
     | PType<typeof mention, 'mention'>
     | PType<typeof boolean, 'boolen'>
     | PType<typeof Pstring, 'string'>
     | PType<typeof number, 'number'>
   )[]
->;
 
 const buildParser = (...parsers: [P.Parser<unknown>, string][]) => {
   return P.alt(...parsers.map(([parser, name]) => parser.node(name))).sepBy(
     P.whitespace
-  ) as ParseResult;
+  ) as P.Parser<ParseResult>;
 };
 
 export const parse = buildParser(
@@ -62,7 +61,7 @@ export const parse = buildParser(
 )
 
 
-export type parsed = { commandName: string; args: string[] };
+export type parsed = { commandName: string; args: ParseResult };
 
 export const parser = (client: Client, content: string): parsed => {
   const mentionPrefix = `<@!${client.user?.id}>`;
@@ -83,7 +82,7 @@ export const parser = (client: Client, content: string): parsed => {
       commandName = prefixAndCommandName.name === "string" ? prefixAndCommandName.value.slice(client.options.prefix.length) : ""
     }
 
-    return { commandName, args: args.map(arg => String(arg.value)) };
+    return { commandName, args };
   }
 
   return { commandName: "parse error", args: [] }
