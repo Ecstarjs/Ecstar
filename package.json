@@ -23,26 +23,26 @@
     "discord.js": "^12.4.1",
     "parsimmon": "^1.18.0",
     "split-string": "^6.1.0",
-    "typedoc": "^0.20.36"
+    "typedoc": "^0.21.2"
   },
   "devDependencies": {
     "@mouse_484/eslint-config-node": "https://eslint-config.mouse484.vercel.app/Node?next",
     "@mouse_484/eslint-config-prettier": "https://eslint-config.mouse484.vercel.app/Prettier?next",
     "@mouse_484/eslint-config-typescript": "https://eslint-config.mouse484.vercel.app/TypeScript?next",
-    "@types/node": "^14.11.8",
+    "@types/node": "^15.12.5",
     "@types/parsimmon": "^1.10.6",
     "@types/ws": "^7.2.7",
     "commitizen": "^4.2.3",
     "cz-conventional-changelog": "3.3.0",
     "eslint": "^7.9.0",
     "nodemon": "^2.0.6",
-    "prettier": "^2.1.1",
+    "prettier": "^2.3.2",
     "semantic-release": "^17.4.2",
-    "ts-node": "^9.0.0",
+    "ts-node": "^10.0.0",
     "tsconfig-paths": "^3.9.0",
     "ttypescript": "^1.5.12",
     "typescript": "^4.0.2",
-    "typescript-transform-paths": "^2.0.1"
+    "typescript-transform-paths": "^3.0.1"
   },
   "files": [
     "dist"
