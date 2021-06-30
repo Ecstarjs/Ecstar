@@ -2,15 +2,15 @@ import {
   Client as DiscordClient,
   ClientOptions as DiscordClientOptions,
 } from 'discord.js';
-import { Store } from 'ecstar/Store';
 import { plugin } from 'ecstar/plugin';
 import { plugins } from 'ecstar/plugins';
+import { Store } from 'ecstar/Store';
 
 export type EcstarClientOptions = DiscordClientOptions & {
   prefix: string;
 };
 
-class Client extends DiscordClient {
+export class Client extends DiscordClient {
   static plugins: plugin[] = [];
 
   readonly commands = new Store('command');
@@ -27,5 +27,3 @@ class Client extends DiscordClient {
     return super.emit('*', name, ...args);
   }
 }
-
-export { Client };
