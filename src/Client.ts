@@ -6,17 +6,17 @@ import { Store } from 'ecstar/Store';
 import { plugin } from 'ecstar/plugin';
 import { plugins } from 'ecstar/plugins';
 
-interface EcstarOptions extends DiscordClientOptions {
+export type EcstarClientOptions = DiscordClientOptions & {
   prefix: string;
-}
+};
 
 class Client extends DiscordClient {
   static plugins: plugin[] = [];
 
   readonly commands = new Store('command');
   readonly events = new Store('event');
-  readonly options!: EcstarOptions;
-  constructor(options: EcstarOptions) {
+  readonly options!: EcstarClientOptions;
+  constructor(options: EcstarClientOptions) {
     super(options);
 
     [...plugins, ...Client.plugins].forEach((plugin) => {
