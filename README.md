@@ -43,7 +43,33 @@ yarn add ecstar
 
 ## 💬Usage
 
-See [examples](https://github.com/Ecstar-js/Ecstar/tree/main/examples)
+_\*You can also use plain JavaScript, but TypeScript is recommended._
+
+```js
+// src/index.ts
+import { Client } from 'ecstar';
+
+new Client({ prefix: '!' }).login(/* token */);
+
+// src/commands/ping.ts
+import { command } from 'ecstar';
+
+export default command(() => ({
+  name: 'ping', // Name of the command
+  render({ message, send }) {
+    /* We will implement as usual. */
+    message.channel.send('pong!');
+    /* There is a more convenient way. */
+    send('pong!');
+  },
+}));
+```
+Run it, and it's done!
+
+![image](https://user-images.githubusercontent.com/38714187/123935293-0d540580-d9cf-11eb-8236-c6b8a8ae09df.png)
+
+
+See more [examples](https://github.com/Ecstar-js/Ecstar/tree/main/examples) , [document](https://ecstar.js.org/)
 
 ## 🎫License
 
