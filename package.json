@@ -15,7 +15,7 @@
     "fix": "yarn run lint --fix",
     "semantic-release": "semantic-release",
     "commit": "commitizen",
-    "document": "typedoc src"
+    "document": "typedoc src/index.ts"
   },
   "dependencies": {
     "chokidar": "^3.4.3",
