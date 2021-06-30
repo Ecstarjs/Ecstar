@@ -60,6 +60,26 @@
 			<div class="tsd-panel tsd-typography">
 				<p><img src="https://user-images.githubusercontent.com/38714187/72132993-bb2ab900-33c3-11ea-9ddc-c3dd7feba787.png" alt="image"></p>
 				<h1 align="center">Ecstar</h1>
+				<p align="center">
+					<a href="https://www.npmjs.com/package/ecstar">
+						<img src="https://img.shields.io/npm/v/ecstar" alt="npm version" />
+					</a>
+					<a href="https://github.com/Ecstarjs/Ecstar/stargazers">
+						<img
+						src="https://img.shields.io/github/stars/mouse484/Ecstar"
+						alt="github starts"
+						/>
+					</a>
+					<a>
+						<img src="https://img.shields.io/npm/dependency-version/ecstar/discord.js" alt="discord.js version">
+					</a>
+					<a href="https://gitpod.io/from-referrer/">
+						<img
+						src="https://img.shields.io/badge/Gitpod-ready--to--code-908a85?logo=gitpod"
+						alt="Gitpod Ready-to-Code"
+						/>
+					</a>
+				</p>
 				<a href="#📃introduction" id="📃introduction" style="color: inherit; text-decoration: none;">
 					<h2>📃Introduction</h2>
 				</a>
@@ -79,7 +99,28 @@
 				<a href="#💬usage" id="💬usage" style="color: inherit; text-decoration: none;">
 					<h2>💬Usage</h2>
 				</a>
-				<p>See <a href="https://github.com/Ecstar-js/Ecstar/tree/main/examples">examples</a></p>
+				<p><em>*You can also use plain JavaScript, but TypeScript is recommended.</em></p>
+				<pre><code class="language-js"><span style="color: #008000">// src/index.ts</span>
+<span style="color: #AF00DB">import</span><span style="color: #000000"> { </span><span style="color: #001080">Client</span><span style="color: #000000"> } </span><span style="color: #AF00DB">from</span><span style="color: #000000"> </span><span style="color: #A31515">&#039;ecstar&#039;</span><span style="color: #000000">;</span>
+
+<span style="color: #0000FF">new</span><span style="color: #000000"> </span><span style="color: #795E26">Client</span><span style="color: #000000">({ </span><span style="color: #001080">prefix:</span><span style="color: #000000"> </span><span style="color: #A31515">&#039;!&#039;</span><span style="color: #000000"> }).</span><span style="color: #795E26">login</span><span style="color: #000000">(</span><span style="color: #008000">/* token */</span><span style="color: #000000">);</span>
+
+<span style="color: #008000">// src/commands/ping.ts</span>
+<span style="color: #AF00DB">import</span><span style="color: #000000"> { </span><span style="color: #001080">command</span><span style="color: #000000"> } </span><span style="color: #AF00DB">from</span><span style="color: #000000"> </span><span style="color: #A31515">&#039;ecstar&#039;</span><span style="color: #000000">;</span>
+
+<span style="color: #AF00DB">export</span><span style="color: #000000"> </span><span style="color: #AF00DB">default</span><span style="color: #000000"> </span><span style="color: #795E26">command</span><span style="color: #000000">(() </span><span style="color: #0000FF">=&gt;</span><span style="color: #000000"> ({</span>
+<span style="color: #000000">  </span><span style="color: #001080">name:</span><span style="color: #000000"> </span><span style="color: #A31515">&#039;ping&#039;</span><span style="color: #000000">, </span><span style="color: #008000">// Name of the command</span>
+<span style="color: #000000">  </span><span style="color: #795E26">render</span><span style="color: #000000">({ </span><span style="color: #001080">message</span><span style="color: #000000">, </span><span style="color: #001080">send</span><span style="color: #000000"> }) {</span>
+<span style="color: #000000">    </span><span style="color: #008000">/* We will implement as usual. */</span>
+<span style="color: #000000">    </span><span style="color: #001080">message</span><span style="color: #000000">.</span><span style="color: #001080">channel</span><span style="color: #000000">.</span><span style="color: #795E26">send</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;pong!&#039;</span><span style="color: #000000">);</span>
+<span style="color: #000000">    </span><span style="color: #008000">/* There is a more convenient way. */</span>
+<span style="color: #000000">    </span><span style="color: #795E26">send</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;pong!&#039;</span><span style="color: #000000">);</span>
+<span style="color: #000000">  },</span>
+<span style="color: #000000">}));</span>
+</code></pre>
+				<p>Run it, and it&#39;s done!</p>
+				<p><img src="https://user-images.githubusercontent.com/38714187/123935293-0d540580-d9cf-11eb-8236-c6b8a8ae09df.png" alt="image"></p>
+				<p>See more <a href="https://github.com/Ecstar-js/Ecstar/tree/main/examples">examples</a> , <a href="https://ecstar.js.org/">document</a></p>
 				<a href="#🎫license" id="🎫license" style="color: inherit; text-decoration: none;">
 					<h2>🎫License</h2>
 				</a>
@@ -99,66 +140,33 @@
 			<nav class="tsd-navigation primary">
 				<ul>
 					<li class=" ">
-						<a href="modules.html">Modules</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="modules/client.html">Client</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="modules/default_events_message_commandhandler.html">default/events/message/<wbr>Command<wbr>Handler</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="modules/default_plugins_eventhandler.html">default/plugins/event<wbr>Handler</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="modules/default_plugins_log.html">default/plugins/log</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="modules/index.html">index</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="modules/lib_store.html">lib/<wbr>Store</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="modules/lib_context.html">lib/context</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="modules/lib_context_argument.html">lib/context/argument</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="modules/lib_context_command.html">lib/context/command</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="modules/lib_context_event.html">lib/context/event</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="modules/lib_getargs.html">lib/get<wbr>Args</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="modules/lib_parser.html">lib/parser</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="modules/lib_plugins.html">lib/plugins</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="modules/lib_structures.html">lib/structures</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="modules/lib_structures_argument.html">lib/structures/argument</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="modules/lib_structures_command.html">lib/structures/command</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="modules/lib_structures_event.html">lib/structures/event</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="modules/lib_structures_plugin.html">lib/structures/plugin</a>
+						<a href="modules.html">Exports</a>
 					</li>
 				</ul>
 			</nav>
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
+					<li class=" tsd-kind-class">
+						<a href="classes/client.html" class="tsd-kind-icon">Client</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="modules.html#ecstarclientoptions" class="tsd-kind-icon">Ecstar<wbr>Client<wbr>Options</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="modules.html#commandoptions" class="tsd-kind-icon">command<wbr>Options</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-has-type-parameter">
+						<a href="modules.html#eventoptions" class="tsd-kind-icon">event<wbr>Options</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="modules.html#command" class="tsd-kind-icon">command</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="modules.html#context" class="tsd-kind-icon">context</a>
+					</li>
+					<li class=" tsd-kind-function tsd-has-type-parameter">
+						<a href="modules.html#event" class="tsd-kind-icon">event</a>
+					</li>
 				</ul>
 			</nav>
 		</div>
@@ -169,18 +177,12 @@
 		<h2>Legend</h2>
 		<div class="tsd-legend-group">
 			<ul class="tsd-legend">
-				<li class="tsd-kind-variable"><span class="tsd-kind-icon">Variable</span></li>
-				<li class="tsd-kind-function"><span class="tsd-kind-icon">Function</span></li>
-				<li class="tsd-kind-function tsd-has-type-parameter"><span class="tsd-kind-icon">Function with type parameter</span></li>
-				<li class="tsd-kind-type-alias"><span class="tsd-kind-icon">Type alias</span></li>
-				<li class="tsd-kind-type-alias tsd-has-type-parameter"><span class="tsd-kind-icon">Type alias with type parameter</span></li>
+				<li class="tsd-kind-constructor tsd-parent-kind-class"><span class="tsd-kind-icon">Constructor</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-class"><span class="tsd-kind-icon">Property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class"><span class="tsd-kind-icon">Method</span></li>
 			</ul>
 			<ul class="tsd-legend">
-				<li class="tsd-kind-class"><span class="tsd-kind-icon">Class</span></li>
-				<li class="tsd-kind-class tsd-has-type-parameter"><span class="tsd-kind-icon">Class with type parameter</span></li>
-			</ul>
-			<ul class="tsd-legend">
-				<li class="tsd-kind-interface"><span class="tsd-kind-icon">Interface</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-static"><span class="tsd-kind-icon">Static property</span></li>
 			</ul>
 		</div>
 	</div>

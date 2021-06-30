@@ -62,29 +62,288 @@
 				<section class="tsd-panel tsd-index-panel">
 					<div class="tsd-index-content">
 						<section class="tsd-index-section ">
-							<h3>Modules</h3>
+							<h3>Classes</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-module"><a href="modules/client.html" class="tsd-kind-icon">Client</a></li>
-								<li class="tsd-kind-module"><a href="modules/default_events_message_commandhandler.html" class="tsd-kind-icon">default/events/message/<wbr>Command<wbr>Handler</a></li>
-								<li class="tsd-kind-module"><a href="modules/default_plugins_eventhandler.html" class="tsd-kind-icon">default/plugins/event<wbr>Handler</a></li>
-								<li class="tsd-kind-module"><a href="modules/default_plugins_log.html" class="tsd-kind-icon">default/plugins/log</a></li>
-								<li class="tsd-kind-module"><a href="modules/index.html" class="tsd-kind-icon">index</a></li>
-								<li class="tsd-kind-module"><a href="modules/lib_store.html" class="tsd-kind-icon">lib/<wbr>Store</a></li>
-								<li class="tsd-kind-module"><a href="modules/lib_context.html" class="tsd-kind-icon">lib/context</a></li>
-								<li class="tsd-kind-module"><a href="modules/lib_context_argument.html" class="tsd-kind-icon">lib/context/argument</a></li>
-								<li class="tsd-kind-module"><a href="modules/lib_context_command.html" class="tsd-kind-icon">lib/context/command</a></li>
-								<li class="tsd-kind-module"><a href="modules/lib_context_event.html" class="tsd-kind-icon">lib/context/event</a></li>
-								<li class="tsd-kind-module"><a href="modules/lib_getargs.html" class="tsd-kind-icon">lib/get<wbr>Args</a></li>
-								<li class="tsd-kind-module"><a href="modules/lib_parser.html" class="tsd-kind-icon">lib/parser</a></li>
-								<li class="tsd-kind-module"><a href="modules/lib_plugins.html" class="tsd-kind-icon">lib/plugins</a></li>
-								<li class="tsd-kind-module"><a href="modules/lib_structures.html" class="tsd-kind-icon">lib/structures</a></li>
-								<li class="tsd-kind-module"><a href="modules/lib_structures_argument.html" class="tsd-kind-icon">lib/structures/argument</a></li>
-								<li class="tsd-kind-module"><a href="modules/lib_structures_command.html" class="tsd-kind-icon">lib/structures/command</a></li>
-								<li class="tsd-kind-module"><a href="modules/lib_structures_event.html" class="tsd-kind-icon">lib/structures/event</a></li>
-								<li class="tsd-kind-module"><a href="modules/lib_structures_plugin.html" class="tsd-kind-icon">lib/structures/plugin</a></li>
+								<li class="tsd-kind-class"><a href="classes/client.html" class="tsd-kind-icon">Client</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section ">
+							<h3>Type aliases</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-type-alias"><a href="modules.html#ecstarclientoptions" class="tsd-kind-icon">Ecstar<wbr>Client<wbr>Options</a></li>
+								<li class="tsd-kind-type-alias"><a href="modules.html#commandoptions" class="tsd-kind-icon">command<wbr>Options</a></li>
+								<li class="tsd-kind-type-alias tsd-has-type-parameter"><a href="modules.html#eventoptions" class="tsd-kind-icon">event<wbr>Options</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section ">
+							<h3>Functions</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-function"><a href="modules.html#command" class="tsd-kind-icon">command</a></li>
+								<li class="tsd-kind-function"><a href="modules.html#context" class="tsd-kind-icon">context</a></li>
+								<li class="tsd-kind-function tsd-has-type-parameter"><a href="modules.html#event" class="tsd-kind-icon">event</a></li>
 							</ul>
 						</section>
 					</div>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Type aliases</h2>
+				<section class="tsd-panel tsd-member tsd-kind-type-alias">
+					<a name="ecstarclientoptions" class="tsd-anchor"></a>
+					<h3>Ecstar<wbr>Client<wbr>Options</h3>
+					<div class="tsd-signature tsd-kind-icon">Ecstar<wbr>Client<wbr>Options<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">DiscordClientOptions</span><span class="tsd-signature-symbol"> &amp; </span><span class="tsd-signature-symbol">{ </span>prefix<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> }</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/Ecstarjs/Ecstar/blob/0d8e827/src/Client.ts#L9">src/Client.ts:9</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-type-alias">
+					<a name="commandoptions" class="tsd-anchor"></a>
+					<h3>command<wbr>Options</h3>
+					<div class="tsd-signature tsd-kind-icon">command<wbr>Options<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">{ </span>aliases<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">; </span>guildOnly<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">; </span>name<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">; </span>permissions<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-symbol">{ </span>bot<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">PermissionResolvable</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">; </span>user<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">PermissionResolvable</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol">; </span>render<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol"> }</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/Ecstarjs/Ecstar/blob/0d8e827/src/lib/structures/command.ts#L4">src/lib/structures/command.ts:4</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-type-declaration">
+						<h4>Type declaration</h4>
+						<ul class="tsd-parameters">
+							<li class="tsd-parameter">
+								<h5><span class="tsd-flag ts-flagOptional">Optional</span> aliases<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span></h5>
+							</li>
+							<li class="tsd-parameter">
+								<h5><span class="tsd-flag ts-flagOptional">Optional</span> guild<wbr>Only<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">boolean</span></h5>
+							</li>
+							<li class="tsd-parameter">
+								<h5>name<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></h5>
+							</li>
+							<li class="tsd-parameter">
+								<h5><span class="tsd-flag ts-flagOptional">Optional</span> permissions<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-symbol">{ </span>bot<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">PermissionResolvable</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">; </span>user<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">PermissionResolvable</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> }</span></h5>
+								<ul class="tsd-parameters">
+									<li class="tsd-parameter">
+										<h5><span class="tsd-flag ts-flagOptional">Optional</span> bot<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">PermissionResolvable</span><span class="tsd-signature-symbol">[]</span></h5>
+									</li>
+									<li class="tsd-parameter">
+										<h5><span class="tsd-flag ts-flagOptional">Optional</span> user<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">PermissionResolvable</span><span class="tsd-signature-symbol">[]</span></h5>
+									</li>
+								</ul>
+							</li>
+							<li class="tsd-parameter">
+								<h5>render<span class="tsd-signature-symbol">: </span>function</h5>
+								<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-type-literal">
+									<li class="tsd-signature tsd-kind-icon">render<span class="tsd-signature-symbol">(</span>context<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">CommandContext</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+								</ul>
+								<ul class="tsd-descriptions">
+									<li class="tsd-description">
+										<aside class="tsd-sources">
+											<ul>
+												<li>Defined in <a href="https://github.com/Ecstarjs/Ecstar/blob/0d8e827/src/lib/structures/command.ts#L9">src/lib/structures/command.ts:9</a></li>
+											</ul>
+										</aside>
+										<h4 class="tsd-parameters-title">Parameters</h4>
+										<ul class="tsd-parameters">
+											<li>
+												<h5>context: <span class="tsd-signature-type">CommandContext</span></h5>
+											</li>
+										</ul>
+										<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-type-alias tsd-has-type-parameter">
+					<a name="eventoptions" class="tsd-anchor"></a>
+					<h3>event<wbr>Options</h3>
+					<div class="tsd-signature tsd-kind-icon">event<wbr>Options&lt;T&gt;<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">{ </span>name<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">; </span>run<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol"> }</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/Ecstarjs/Ecstar/blob/0d8e827/src/lib/structures/event.ts#L8">src/lib/structures/event.ts:8</a></li>
+						</ul>
+					</aside>
+					<h4 class="tsd-type-parameters-title">Type parameters</h4>
+					<ul class="tsd-type-parameters">
+						<li>
+							<h4>T<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">keyof </span><span class="tsd-signature-type">EcstarEvents</span> = <span class="tsd-signature-type">&quot;unknown&quot;</span></h4>
+						</li>
+					</ul>
+					<div class="tsd-type-declaration">
+						<h4>Type declaration</h4>
+						<ul class="tsd-parameters">
+							<li class="tsd-parameter">
+								<h5>name<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">T</span></h5>
+							</li>
+							<li class="tsd-parameter">
+								<h5>run<span class="tsd-signature-symbol">: </span>function</h5>
+								<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-type-literal">
+									<li class="tsd-signature tsd-kind-icon">run<span class="tsd-signature-symbol">(</span>context<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">EventContext</span>, callback<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">EcstarEvents</span><span class="tsd-signature-symbol">[</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+								</ul>
+								<ul class="tsd-descriptions">
+									<li class="tsd-description">
+										<aside class="tsd-sources">
+											<ul>
+												<li>Defined in <a href="https://github.com/Ecstarjs/Ecstar/blob/0d8e827/src/lib/structures/event.ts#L10">src/lib/structures/event.ts:10</a></li>
+											</ul>
+										</aside>
+										<h4 class="tsd-parameters-title">Parameters</h4>
+										<ul class="tsd-parameters">
+											<li>
+												<h5>context: <span class="tsd-signature-type">EventContext</span></h5>
+											</li>
+											<li>
+												<h5>callback: <span class="tsd-signature-type">EcstarEvents</span><span class="tsd-signature-symbol">[</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">]</span></h5>
+											</li>
+										</ul>
+										<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</div>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Functions</h2>
+				<section class="tsd-panel tsd-member tsd-kind-function">
+					<a name="command" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> command</h3>
+					<ul class="tsd-signatures tsd-kind-function">
+						<li class="tsd-signature tsd-kind-icon">command<span class="tsd-signature-symbol">(</span>methods<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><a href="modules.html#commandoptions" class="tsd-signature-type" data-tsd-kind="Type alias">commandOptions</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="modules.html#commandoptions" class="tsd-signature-type" data-tsd-kind="Type alias">commandOptions</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/Ecstarjs/Ecstar/blob/0d8e827/src/lib/structures/command.ts#L13">src/lib/structures/command.ts:13</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>methods: <span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><a href="modules.html#commandoptions" class="tsd-signature-type" data-tsd-kind="Type alias">commandOptions</a></h5>
+									<ul class="tsd-parameters">
+										<li class="tsd-parameter-signature">
+											<ul class="tsd-signatures tsd-kind-type-literal">
+												<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="modules.html#commandoptions" class="tsd-signature-type" data-tsd-kind="Type alias">commandOptions</a></li>
+											</ul>
+											<ul class="tsd-descriptions">
+												<li class="tsd-description">
+													<h4 class="tsd-returns-title">Returns <a href="modules.html#commandoptions" class="tsd-signature-type" data-tsd-kind="Type alias">commandOptions</a></h4>
+												</li>
+											</ul>
+										</li>
+									</ul>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="modules.html#commandoptions" class="tsd-signature-type" data-tsd-kind="Type alias">commandOptions</a></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function">
+					<a name="context" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> context</h3>
+					<ul class="tsd-signatures tsd-kind-function">
+						<li class="tsd-signature tsd-kind-icon">context<span class="tsd-signature-symbol">(</span>client<span class="tsd-signature-symbol">: </span><a href="classes/client.html" class="tsd-signature-type" data-tsd-kind="Class">Client</a>, message<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Message</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">CommandContext</span></li>
+						<li class="tsd-signature tsd-kind-icon">context<span class="tsd-signature-symbol">(</span>client<span class="tsd-signature-symbol">: </span><a href="classes/client.html" class="tsd-signature-type" data-tsd-kind="Class">Client</a>, name<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">EventContext</span></li>
+						<li class="tsd-signature tsd-kind-icon">context<span class="tsd-signature-symbol">(</span>client<span class="tsd-signature-symbol">: </span><a href="classes/client.html" class="tsd-signature-type" data-tsd-kind="Class">Client</a>, name<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">ArgumentContext</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/Ecstarjs/Ecstar/blob/0d8e827/src/lib/context/index.ts#L21">src/lib/context/index.ts:21</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>client: <a href="classes/client.html" class="tsd-signature-type" data-tsd-kind="Class">Client</a></h5>
+								</li>
+								<li>
+									<h5>message: <span class="tsd-signature-type">Message</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">CommandContext</span></h4>
+						</li>
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/Ecstarjs/Ecstar/blob/0d8e827/src/lib/context/index.ts#L21">src/lib/context/index.ts:21</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>client: <a href="classes/client.html" class="tsd-signature-type" data-tsd-kind="Class">Client</a></h5>
+								</li>
+								<li>
+									<h5>name: <span class="tsd-signature-type">string</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">EventContext</span></h4>
+						</li>
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/Ecstarjs/Ecstar/blob/0d8e827/src/lib/context/index.ts#L21">src/lib/context/index.ts:21</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>client: <a href="classes/client.html" class="tsd-signature-type" data-tsd-kind="Class">Client</a></h5>
+								</li>
+								<li>
+									<h5>name: <span class="tsd-signature-type">string</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">ArgumentContext</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-has-type-parameter">
+					<a name="event" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> event</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-has-type-parameter">
+						<li class="tsd-signature tsd-kind-icon">event&lt;T&gt;<span class="tsd-signature-symbol">(</span>methods<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><a href="modules.html#eventoptions" class="tsd-signature-type" data-tsd-kind="Type alias">eventOptions</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="modules.html#eventoptions" class="tsd-signature-type" data-tsd-kind="Type alias">eventOptions</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/Ecstarjs/Ecstar/blob/0d8e827/src/lib/structures/event.ts#L13">src/lib/structures/event.ts:13</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-type-parameters-title">Type parameters</h4>
+							<ul class="tsd-type-parameters">
+								<li>
+									<h4>T<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">keyof </span><span class="tsd-signature-type">EcstarEvents</span></h4>
+								</li>
+							</ul>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>methods: <span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><a href="modules.html#eventoptions" class="tsd-signature-type" data-tsd-kind="Type alias">eventOptions</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h5>
+									<ul class="tsd-parameters">
+										<li class="tsd-parameter-signature">
+											<ul class="tsd-signatures tsd-kind-type-literal">
+												<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="modules.html#eventoptions" class="tsd-signature-type" data-tsd-kind="Type alias">eventOptions</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></li>
+											</ul>
+											<ul class="tsd-descriptions">
+												<li class="tsd-description">
+													<h4 class="tsd-returns-title">Returns <a href="modules.html#eventoptions" class="tsd-signature-type" data-tsd-kind="Type alias">eventOptions</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h4>
+												</li>
+											</ul>
+										</li>
+									</ul>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="modules.html#eventoptions" class="tsd-signature-type" data-tsd-kind="Type alias">eventOptions</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
 				</section>
 			</section>
 		</div>
@@ -92,66 +351,33 @@
 			<nav class="tsd-navigation primary">
 				<ul>
 					<li class="current ">
-						<a href="modules.html">Modules</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="modules/client.html">Client</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="modules/default_events_message_commandhandler.html">default/events/message/<wbr>Command<wbr>Handler</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="modules/default_plugins_eventhandler.html">default/plugins/event<wbr>Handler</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="modules/default_plugins_log.html">default/plugins/log</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="modules/index.html">index</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="modules/lib_store.html">lib/<wbr>Store</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="modules/lib_context.html">lib/context</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="modules/lib_context_argument.html">lib/context/argument</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="modules/lib_context_command.html">lib/context/command</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="modules/lib_context_event.html">lib/context/event</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="modules/lib_getargs.html">lib/get<wbr>Args</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="modules/lib_parser.html">lib/parser</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="modules/lib_plugins.html">lib/plugins</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="modules/lib_structures.html">lib/structures</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="modules/lib_structures_argument.html">lib/structures/argument</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="modules/lib_structures_command.html">lib/structures/command</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="modules/lib_structures_event.html">lib/structures/event</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="modules/lib_structures_plugin.html">lib/structures/plugin</a>
+						<a href="modules.html">Exports</a>
 					</li>
 				</ul>
 			</nav>
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
+					<li class=" tsd-kind-class">
+						<a href="classes/client.html" class="tsd-kind-icon">Client</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="modules.html#ecstarclientoptions" class="tsd-kind-icon">Ecstar<wbr>Client<wbr>Options</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="modules.html#commandoptions" class="tsd-kind-icon">command<wbr>Options</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-has-type-parameter">
+						<a href="modules.html#eventoptions" class="tsd-kind-icon">event<wbr>Options</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="modules.html#command" class="tsd-kind-icon">command</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="modules.html#context" class="tsd-kind-icon">context</a>
+					</li>
+					<li class=" tsd-kind-function tsd-has-type-parameter">
+						<a href="modules.html#event" class="tsd-kind-icon">event</a>
+					</li>
 				</ul>
 			</nav>
 		</div>
@@ -162,18 +388,12 @@
 		<h2>Legend</h2>
 		<div class="tsd-legend-group">
 			<ul class="tsd-legend">
-				<li class="tsd-kind-variable"><span class="tsd-kind-icon">Variable</span></li>
-				<li class="tsd-kind-function"><span class="tsd-kind-icon">Function</span></li>
-				<li class="tsd-kind-function tsd-has-type-parameter"><span class="tsd-kind-icon">Function with type parameter</span></li>
-				<li class="tsd-kind-type-alias"><span class="tsd-kind-icon">Type alias</span></li>
-				<li class="tsd-kind-type-alias tsd-has-type-parameter"><span class="tsd-kind-icon">Type alias with type parameter</span></li>
+				<li class="tsd-kind-constructor tsd-parent-kind-class"><span class="tsd-kind-icon">Constructor</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-class"><span class="tsd-kind-icon">Property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class"><span class="tsd-kind-icon">Method</span></li>
 			</ul>
 			<ul class="tsd-legend">
-				<li class="tsd-kind-class"><span class="tsd-kind-icon">Class</span></li>
-				<li class="tsd-kind-class tsd-has-type-parameter"><span class="tsd-kind-icon">Class with type parameter</span></li>
-			</ul>
-			<ul class="tsd-legend">
-				<li class="tsd-kind-interface"><span class="tsd-kind-icon">Interface</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-static"><span class="tsd-kind-icon">Static property</span></li>
 			</ul>
 		</div>
 	</div>
