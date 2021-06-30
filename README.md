@@ -2,6 +2,27 @@
 
 <h1 align="center">Ecstar</h1>
 
+<p align="center">
+  <a href="https://www.npmjs.com/package/ecstar">
+    <img src="https://img.shields.io/npm/v/ecstar" alt="npm version" />
+  </a>
+  <a href="https://github.com/Ecstarjs/Ecstar/stargazers">
+    <img
+      src="https://img.shields.io/github/stars/mouse484/Ecstar"
+      alt="github starts"
+    />
+  </a>
+  <a>
+    <img src="https://img.shields.io/npm/dependency-version/ecstar/discord.js" alt="discord.js version">
+  </a>
+  <a href="https://gitpod.io/from-referrer/">
+    <img
+      src="https://img.shields.io/badge/Gitpod-ready--to--code-908a85?logo=gitpod"
+      alt="Gitpod Ready-to-Code"
+    />
+  </a>
+</p>
+
 ## 📃Introduction
 
 Ecstar is the easiest framework [Discord.js](https://github.com/discordjs/discord.js).
