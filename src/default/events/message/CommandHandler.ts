@@ -34,5 +34,6 @@ export default event(() => ({
     }
 
     if (command?.render) command.render(ctx);
+    else if (command?.run) command.run(ctx);
   },
 }));

@@ -6,6 +6,8 @@ export type commandOptions = {
   aliases?: string[];
   guildOnly?: boolean;
   permissions?: { bot?: PermissionResolvable[]; user?: PermissionResolvable[] };
+  run?(context: CommandContext): void;
+  /** @deprecated Replaced by run */
   render?(context: CommandContext): void;
 };
 
