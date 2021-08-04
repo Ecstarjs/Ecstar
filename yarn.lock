@@ -4895,9 +4895,9 @@ typedoc@^0.21.2:
     typedoc-default-themes "^0.12.10"
 
 typescript-transform-paths@^3.0.1:
-  version "3.0.1"
-  resolved "https://registry.yarnpkg.com/typescript-transform-paths/-/typescript-transform-paths-3.0.1.tgz#fb1dcbf7e6d4a0555f629f8da0e1063c609c4fe7"
-  integrity sha512-qG/0Zgo5mv238QKArRZ/Je65gcO+lW6CYtMVh1PlOLvHOxQ/h+DpLxfNlFjKeA9gpw5TbKFaO2vllqpTqGOnUA==
+  version "3.2.0"
+  resolved "https://registry.yarnpkg.com/typescript-transform-paths/-/typescript-transform-paths-3.2.0.tgz#253d41dcddcea8dee389e9d569fe250ece0f42dc"
+  integrity sha512-jWc4v7KNmd3Rz2ZrxlD5l3v9PVL4bGU0DXL9eoKk4Q0ATRntb3GSH565+G/BpE1XLeO+nuvyp0Z9uZkJBeWlAA==
   dependencies:
     minimatch "^3.0.4"
 
