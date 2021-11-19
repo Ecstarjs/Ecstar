@@ -29,7 +29,7 @@
     "@mouse_484/eslint-config-node": "https://eslint-config.mouse484.vercel.app/Node?next",
     "@mouse_484/eslint-config-prettier": "https://eslint-config.mouse484.vercel.app/Prettier?next",
     "@mouse_484/eslint-config-typescript": "https://eslint-config.mouse484.vercel.app/TypeScript?next",
-    "@types/node": "^15.12.5",
+    "@types/node": "^16.11.9",
     "@types/parsimmon": "^1.10.6",
     "@types/ws": "^7.2.7",
     "commitizen": "^4.2.3",
