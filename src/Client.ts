@@ -25,7 +25,7 @@ export class Client extends DiscordClient {
   readonly events = new Store('event');
   readonly options!: DiscordAndEcstarClientOptions;
   constructor(options: EcstarClientOptions) {
-    super({ intents: Intents.FLAGS.GUILDS, ...options });
+    super({ intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_MESSAGES], ...options });
 
     [...plugins, ...Client.plugins].forEach((plugin) => {
       plugin.run(this);
