@@ -1,17 +1,11 @@
+import { Message, Snowflake, TextChannel } from 'discord.js';
 import { Client } from 'ecstar';
-import {
-  APIMessage,
-  Message,
-  Snowflake,
-  StringResolvable,
-  TextChannel,
-} from 'discord.js';
 import { ContextBase } from 'ecstar/context';
 
 export interface EventContext extends ContextBase {
   type: 'event';
   send(
-    content: StringResolvable | APIMessage,
+    content: Parameters<TextChannel['send']>[0],
     channelID: Snowflake
   ): Promise<Message>;
 }

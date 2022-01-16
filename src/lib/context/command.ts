@@ -1,9 +1,7 @@
 import { Client } from 'ecstar';
 import {
-  APIMessage,
   Message,
   Snowflake,
-  StringResolvable,
   TextChannel,
   User,
 } from 'discord.js';
@@ -20,7 +18,7 @@ export interface CommandContext extends ContextBase {
   getArgs<T extends { [key: string]: keyof TypeList }>(types: T): argsType<T>;
   args: parsed['args'];
   send(
-    content: StringResolvable | APIMessage,
+    content: Parameters<TextChannel["send"]>[0],
     channelID?: Snowflake
   ): Promise<Message>;
 }
