@@ -7,7 +7,7 @@ export default command(() => ({
     bot: ['MANAGE_CHANNELS'],
   },
   render({ message, args: [text] }) {
-    if (message.channel.type === 'text' && text.name === 'string') {
+    if (message.channel.type === 'GUILD_TEXT' && text.name === 'string') {
       message.channel.edit({ name: text.value }, 'Ecstar editChannel test');
     }
   },
