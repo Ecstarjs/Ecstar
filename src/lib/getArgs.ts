@@ -1,4 +1,4 @@
-import { parsed } from "ecstar/parser"
+import { parsed } from 'ecstar/parser';
 
 export type TypeList = {
   string: string;
@@ -10,11 +10,11 @@ export type argsType<types extends { [key: string]: keyof TypeList }> = {
   [K in keyof types]: TypeList[types[K]];
 };
 
-export const getArgs = (args: parsed["args"]): typeof func => {
+export const getArgs = (args: parsed['args']): typeof func => {
   const func = <T extends { [key: string]: keyof TypeList }>(types: T) => {
     return Object.fromEntries(
       Object.entries(types).map(([key, type], index) => {
-        const value = args[index].value;
+        const value = args[index]?.value;
         const func = () => {
           switch (type) {
             case 'string':
