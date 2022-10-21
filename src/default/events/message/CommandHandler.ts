@@ -4,7 +4,6 @@ export default event(() => ({
   name: 'messageCreate',
   run({ client }, [message]) {
     if (message.author.bot) return;
-
     if (
       !message.content.startsWith(client.options.prefix) &&
       !message.content.startsWith(`<@!${client.user?.id}>`)
@@ -22,7 +21,7 @@ export default event(() => ({
     if (command?.permissions) {
       if (
         command.permissions.bot &&
-        !message.guild?.me?.permissions.has(command.permissions.bot)
+        !message.guild?.members.me?.permissions.has(command.permissions.bot)
       ) {
         return message.channel.send('Bot does not have permissions.');
       } else if (

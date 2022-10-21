@@ -1,14 +1,21 @@
 import { command } from 'ecstar';
+import { ChannelType } from 'discord.js';
 
 export default command(() => ({
   name: 'editChannel',
   guildOnly: true,
   permissions: {
-    bot: ['MANAGE_CHANNELS'],
+    bot: ['ManageChannels'],
   },
   render({ message, args: [text] }) {
-    if (message.channel.type === 'GUILD_TEXT' && text.name === 'string') {
-      message.channel.edit({ name: text.value }, 'Ecstar editChannel test');
+    if (
+      message.channel.type === ChannelType.GuildText &&
+      text.name === 'string'
+    ) {
+      message.channel.edit({
+        name: text.value,
+        reason: 'Ecstar editChannel test',
+      });
     }
   },
 }));

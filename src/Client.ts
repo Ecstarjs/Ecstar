@@ -1,7 +1,8 @@
 import {
   Client as DiscordClient,
   ClientOptions as DiscordClientOptions,
-  Intents,
+  GatewayIntentBits,
+  IntentsBitField,
 } from 'discord.js';
 import { plugin } from 'ecstar/plugin';
 import { plugins } from 'ecstar/plugins';
@@ -23,9 +24,18 @@ export class Client extends DiscordClient {
 
   readonly commands = new Store('command');
   readonly events = new Store('event');
-  readonly options!: DiscordAndEcstarClientOptions;
+  readonly options!: Omit<DiscordAndEcstarClientOptions, 'intents'> & {
+    intents: IntentsBitField;
+  };
   constructor(options: EcstarClientOptions) {
-    super({ intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_MESSAGES], ...options });
+    super({
+      intents: [
+        GatewayIntentBits.Guilds,
+        GatewayIntentBits.GuildMessages,
+        GatewayIntentBits.MessageContent,
+      ],
+      ...options,
+    });
 
     [...plugins, ...Client.plugins].forEach((plugin) => {
       plugin.run(this);
