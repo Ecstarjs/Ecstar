@@ -41,7 +41,7 @@
     "husky": "8.0.1",
     "nodemon": "2.0.20",
     "prettier": "2.7.1",
-    "semantic-release": "^18.0.1",
+    "semantic-release": "^19.0.0",
     "ts-node": "10.9.1",
     "tsconfig-paths": "3.14.1",
     "ttypescript": "1.5.13",
