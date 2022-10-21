@@ -34,7 +34,7 @@
     "@mouse_484/eslint-config-typescript": "https://eslint-config.mouse484.vercel.app/TypeScript?main",
     "@types/node": "17.0.8",
     "@types/parsimmon": "1.10.6",
-    "@types/ws": "8.2.2",
+    "@types/ws": "8.5.3",
     "commitizen": "4.2.5",
     "cz-conventional-changelog": "3.3.0",
     "eslint": "8.7.0",
