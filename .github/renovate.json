@@ -1,0 +1,39 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": ["config:base", ":timezone(Asia/Tokyo)"],
+  "labels": ["dependencies", "renovate"],
+  "major": {
+    "automerge": false
+  },
+  "pin": {
+    "automerge": true
+  },
+  "packageRules": [
+    {
+      "groupName": "linters/formater",
+      "extends": ["packages:linters"],
+      "matchPackagePatterns": ["prettier"],
+      "matchPackagePrefixes": ["@mouse_484/eslint-config-"],
+      "automerge": true
+    },
+    {
+      "groupName": "commit",
+      "matchPackageNames": [
+        "husky",
+        "commitizen",
+        "cz-conventional-changelog",
+        "semantic-release"
+      ],
+      "matchPackagePrefixes": ["@commitlint/"]
+    },
+
+    {
+      "groupName": "TypeScript",
+      "matchPackagePatterns": ["typescript", "^ts"]
+    },
+    {
+      "groupName": "@types",
+      "matchPackagePrefixes": ["@types/"]
+    }
+  ]
+}
