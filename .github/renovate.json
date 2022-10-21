@@ -5,6 +5,9 @@
   "major": {
     "automerge": false
   },
+  "pin": {
+    "automerge": true
+  },
   "packageRules": [
     {
       "groupName": "linters/formater",
