@@ -7,7 +7,7 @@ import { commandOptions } from 'ecstar/command';
 import { eventOptions } from 'ecstar/event';
 import { argumentOptions } from 'ecstar/argument';
 
-export type StoreImported<T extends Structures> = T extends 'command'
+export type StoreImported<T extends keyof Structures> = T extends 'command'
   ? commandOptions
   : T extends 'event'
   ? eventOptions[]
@@ -15,7 +15,10 @@ export type StoreImported<T extends Structures> = T extends 'command'
   ? argumentOptions
   : never;
 
-export class Store<T extends Structures> extends Map<string, StoreImported<T>> {
+export class Store<T extends keyof Structures> extends Map<
+  string,
+  StoreImported<T>
+> {
   constructor(protected type: T) {
     super();
 

@@ -7,6 +7,7 @@ import {
 import { plugin } from 'ecstar/plugin';
 import { plugins } from 'ecstar/plugins';
 import { Store } from 'ecstar/Store';
+import { Store as nextStore } from 'ecstar/store';
 
 export type ExtendedOption = {
   prefix: string;
@@ -18,7 +19,7 @@ export type EcstarClientOptions = Omit<DiscordClientOptions, 'intents'> & {
 export class Client extends DiscordClient {
   static plugins: plugin[] = [];
 
-  readonly commands = new Store('command');
+  readonly commands = new nextStore<'command'>('commands');
   readonly events = new Store('event');
   readonly options!: Omit<EcstarClientOptions, 'intents'> & {
     intents: IntentsBitField;
