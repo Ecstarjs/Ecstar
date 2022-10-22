@@ -11,12 +11,8 @@ import { Store } from 'ecstar/Store';
 export type ExtendedOption = {
   prefix: string;
 };
-
-export type DiscordAndEcstarClientOptions = DiscordClientOptions &
-  ExtendedOption;
-
 export type EcstarClientOptions = Omit<DiscordClientOptions, 'intents'> & {
-  intents?: DiscordClientOptions['intents'];
+  intents?: IntentsBitField;
 } & ExtendedOption;
 
 export class Client extends DiscordClient {
@@ -24,9 +20,9 @@ export class Client extends DiscordClient {
 
   readonly commands = new Store('command');
   readonly events = new Store('event');
-  readonly options!: Omit<DiscordAndEcstarClientOptions, 'intents'> & {
+  readonly options!: Omit<EcstarClientOptions, 'intents'> & {
     intents: IntentsBitField;
-  };
+  }; // Intents is required in Discrod.js
   constructor(options: EcstarClientOptions) {
     super({
       intents: [
