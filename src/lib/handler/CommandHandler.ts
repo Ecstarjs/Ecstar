@@ -33,7 +33,7 @@ export default event(() => ({
       }
     }
 
-    if (command?.render) command.render(ctx);
+    if (command?.render) command.render(ctx); // remove v6 majer
     else if (command?.run) command.run(ctx);
   },
 }));
