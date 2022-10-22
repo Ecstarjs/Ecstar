@@ -1,7 +1,8 @@
 import { context, event } from 'ecstar';
+import { Events } from 'discord.js';
 
 export default event(() => ({
-  name: 'messageCreate',
+  name: Events.MessageCreate,
   run({ client }, [message]) {
     if (message.author.bot) return;
     if (
