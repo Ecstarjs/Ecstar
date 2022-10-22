@@ -1,11 +1,11 @@
+import consola from 'consola';
 import {
   Client as DiscordClient,
   ClientOptions as DiscordClientOptions,
   GatewayIntentBits,
   IntentsBitField,
 } from 'discord.js';
-import { plugin } from 'ecstar/plugin';
-import { plugins } from 'ecstar/plugins';
+import { context } from 'ecstar/context';
 import { CommandStore } from 'ecstar/store/CommandStore';
 import { EventStore } from 'ecstar/store/EventStore';
 
@@ -17,13 +17,12 @@ export type EcstarClientOptions = Omit<DiscordClientOptions, 'intents'> & {
 } & ExtendedOption;
 
 export class Client extends DiscordClient {
-  static plugins: plugin[] = [];
-
   readonly commands = new CommandStore();
   readonly events = new EventStore();
   readonly options!: Omit<EcstarClientOptions, 'intents'> & {
     intents: IntentsBitField;
   }; // Intents is required in Discrod.js
+  log = consola;
   constructor(options: EcstarClientOptions) {
     super({
       intents: [
@@ -33,12 +32,16 @@ export class Client extends DiscordClient {
       ],
       ...options,
     });
-
-    [...plugins, ...Client.plugins].forEach((plugin) => {
-      plugin.run(this);
-    });
   }
   emit(name: string, ...args: unknown[]): boolean {
-    return super.emit('*', name, ...args);
+    const events = this.events.get(name);
+    if (events) {
+      const ctx = context(this, name);
+
+      events.forEach((event) => {
+        event.run(ctx, args);
+      });
+    }
+    return true;
   }
 }

@@ -19,14 +19,6 @@ export class StoreBase<
     const directorypath = getDirectoryPath(storeDirectryName);
     if (!directorypath) return;
     watch(directorypath).on('add', (path) => this.update(path));
-
-    this.loadDefault(storeDirectryName);
-  }
-  loadDefault(directoryName: string) {
-    watch(path.resolve(__dirname, '../../default', directoryName)).on(
-      'add',
-      (path: string) => this.update(path)
-    );
   }
   async update(path: string) {
     const { default: file }: { default: X } = await import(path);
