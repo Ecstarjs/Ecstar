@@ -9,24 +9,29 @@ const getDirectoryPath = (directoryName: string) => {
   return path.resolve(rootDir, directoryName);
 };
 
-export class Store<T extends keyof Structures> extends Map {
+export class StoreBase<
+  T extends keyof Structures,
+  X extends Structures[T] | Structures[T][] = Structures[T]
+> extends Map<string, X> {
   constructor(storeDirectryName: string) {
     super();
+
     const directorypath = getDirectoryPath(storeDirectryName);
     if (!directorypath) return;
-
     watch(directorypath).on('add', (path) => this.update(path));
+
     this.loadDefault(storeDirectryName);
   }
   loadDefault(directoryName: string) {
-    watch(path.resolve(__dirname, '../default', directoryName)).on(
+    watch(path.resolve(__dirname, '../../default', directoryName)).on(
       'add',
       (path: string) => this.update(path)
     );
   }
   async update(path: string) {
-    const { default: file }: { default: Structures[T] } = await import(path);
-
-    this.set(file.name, file);
+    const { default: file }: { default: X } = await import(path);
+    if ('name' in file) {
+      this.set(file.name, file);
+    }
   }
 }
