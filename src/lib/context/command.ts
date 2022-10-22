@@ -1,14 +1,9 @@
 import { Client } from 'ecstar';
-import {
-  Message,
-  Snowflake,
-  TextChannel,
-  User,
-} from 'discord.js';
+import { Message, Snowflake, TextChannel, User } from 'discord.js';
 
 import { ContextBase } from 'ecstar/context';
-import { parser, parsed } from 'ecstar/parser';
-import { getArgs, argsType, TypeList } from 'ecstar/getArgs';
+import { parser, parsed } from 'ecstar/utils/parser';
+import { getArgs, argsType, TypeList } from 'ecstar/utils/getArgs';
 
 export interface CommandContext extends ContextBase {
   type: 'command';
@@ -18,7 +13,7 @@ export interface CommandContext extends ContextBase {
   getArgs<T extends { [key: string]: keyof TypeList }>(types: T): argsType<T>;
   args: parsed['args'];
   send(
-    content: Parameters<TextChannel["send"]>[0],
+    content: Parameters<TextChannel['send']>[0],
     channelID?: Snowflake
   ): Promise<Message>;
 }
