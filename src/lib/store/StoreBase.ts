@@ -19,7 +19,10 @@ export class StoreBase<
 
     const directorypath = getDirectoryPath(storeDirectryName);
     if (!directorypath) return;
-    watch(directorypath).on('add', (path) => this.update(path));
+    watch([directorypath, path.resolve(__dirname, '../../core/')]).on(
+      'add',
+      (path) => this.update(path)
+    );
   }
   add(name: string, file: X): this {
     Client.log.info('[Store]', `/${this.storeDirectryName} - ${name}`);
