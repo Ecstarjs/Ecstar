@@ -22,6 +22,7 @@ export class Client extends DiscordClient {
   readonly options!: Omit<EcstarClientOptions, 'intents'> & {
     intents: IntentsBitField;
   }; // Intents is required in Discrod.js
+  static log = consola;
   log = consola;
   constructor(options: EcstarClientOptions) {
     super({
