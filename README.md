@@ -6,12 +6,6 @@
   <a href="https://www.npmjs.com/package/ecstar">
     <img src="https://img.shields.io/npm/v/ecstar" alt="npm version" />
   </a>
-  <a href="https://github.com/Ecstarjs/Ecstar/stargazers">
-    <img
-      src="https://img.shields.io/github/stars/mouse484/Ecstar"
-      alt="github starts"
-    />
-  </a>
   <a>
     <img src="https://img.shields.io/npm/dependency-version/ecstar/discord.js" alt="discord.js version">
   </a>
@@ -25,7 +19,7 @@
 
 ## 📃Introduction
 
-Ecstar is the easiest framework [Discord.js](https://github.com/discordjs/discord.js).
+Ecstar is the easiest framework for [Discord.js](https://github.com/discordjs/discord.js).
 
 ## 📖Document
 
@@ -33,11 +27,11 @@ Ecstar is the easiest framework [Discord.js](https://github.com/discordjs/discor
 
 ## 📥Installation
 
-Install [Ecstar](https://www.npmjs.com/package/ecstar) using [npm](https://www.npmjs.com/) or [yarn](https://yarnpkg.com/).
+Install [Ecstar](https://www.npmjs.com/package/ecstar)
 
 ```
 npm install ecstar
-or
+
 yarn add ecstar
 ```
 
@@ -45,7 +39,7 @@ yarn add ecstar
 
 _\*You can also use plain JavaScript, but TypeScript is recommended._
 
-```js
+```ts
 // src/index.ts
 import { Client } from 'ecstar';
 
@@ -56,7 +50,7 @@ import { command } from 'ecstar';
 
 export default command(() => ({
   name: 'ping', // Name of the command
-  render({ message, send }) {
+  run({ message, send }) {
     /* We will implement as usual. */
     message.channel.send('pong!');
     /* There is a more convenient way. */
@@ -64,10 +58,10 @@ export default command(() => ({
   },
 }));
 ```
+
 Run it, and it's done!
 
-![image](https://user-images.githubusercontent.com/38714187/123935293-0d540580-d9cf-11eb-8236-c6b8a8ae09df.png)
-
+![image](https://user-images.githubusercontent.com/38714187/197368797-9afd04b7-4b93-4048-b9e9-9a5e1b5b6a0d.png)
 
 See more [examples](https://github.com/Ecstar-js/Ecstar/tree/main/examples) , [document](https://ecstar.js.org/)
 
@@ -77,5 +71,6 @@ See more [examples](https://github.com/Ecstar-js/Ecstar/tree/main/examples) , [d
 
 ## 👀Author
 
-- [Twitter](https://twitter.com/mouse_484)
-- [Discord](https://discord.gg/T4e5xbP)
+- mouse_484
+  - [Twitter](https://twitter.com/mouse_484)
+  - [Discord](https://discord.gg/T4e5xbP)
