@@ -1,10 +1,11 @@
 {
   "name": "ecstar",
-  "version": "dev",
+  "version": "0.0.0-dev",
   "description": "The easiest JavaScript/TypeScript Discord bot framework.",
   "main": "dist/index.js",
   "types": "dist/type",
   "repository": "https://github.com/Ecstar-js/Ecstar.git",
+  "homepage": "https://ecstar.js.org",
   "author": "mouse_484",
   "license": "MIT",
   "scripts": {
