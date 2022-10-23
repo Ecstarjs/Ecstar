@@ -13,6 +13,6 @@ export class EventStore extends StoreBase<'event', Structures['event'][]> {
       path
     );
     const current = this.get(file.name);
-    this.set(file.name, current ? [file, ...current] : [file]);
+    this.add(file.name, current ? [file, ...current] : [file]);
   }
 }
