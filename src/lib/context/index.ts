@@ -6,7 +6,7 @@ import { commandContext } from 'ecstar/context/command';
 import { eventContext } from 'ecstar/context/event';
 import { argumentContext } from 'ecstar/context/argument';
 
-type ContextType = keyof Structures | 'unknown';
+type ContextType = keyof Structures | string | 'unknown';
 
 export interface ContextBase {
   name: string;
