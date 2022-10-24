@@ -6,6 +6,7 @@ import { parser, parsed } from 'ecstar/utils/parser';
 import { getArgs, argsType, TypeList } from 'ecstar/utils/getArgs';
 
 export interface CommandContext extends ContextBase {
+  name: string;
   type: 'command';
   message: Message;
   author: User;
@@ -25,7 +26,7 @@ export const commandContext = (
   const { commandName, args } = parser(client, message.content);
 
   return {
-    name: commandName,
+    name: commandName.toLowerCase(),
     type: 'command',
     client,
     message,

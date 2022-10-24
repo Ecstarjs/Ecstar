@@ -9,7 +9,7 @@ export default event(() => ({
     for (const key of client.commands.keys()) {
       commands.push(
         new SlashCommandBuilder()
-          .setName(key.toLowerCase())
+          .setName(key)
           .setDescription('ecstar slash command')
       );
     }

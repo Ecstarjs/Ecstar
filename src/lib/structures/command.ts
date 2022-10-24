@@ -3,7 +3,7 @@ import { PermissionResolvable } from 'discord.js';
 import { SlashCommandContext } from 'ecstar/context/slashCommand';
 
 export type commandOptions = {
-  name: string;
+  name: Lowercase<string>;
   aliases?: string[];
   guildOnly?: boolean;
   permissions?: { bot?: PermissionResolvable[]; user?: PermissionResolvable[] };
