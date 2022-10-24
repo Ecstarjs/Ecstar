@@ -25,6 +25,13 @@ Ecstar is the easiest framework for [Discord.js](https://github.com/discordjs/di
 
 [ecstar.js.org](https://ecstar.js.org/)
 
+## 🎉Features
+
+- [x] commands
+- [x] events
+- [ ] slash command
+  - Only partially available
+
 ## 📥Installation
 
 Install [Ecstar](https://www.npmjs.com/package/ecstar)
@@ -44,7 +51,9 @@ _\*You can also use plain JavaScript, but TypeScript is recommended._
 import { Client } from 'ecstar';
 
 new Client({ prefix: '!' }).login(/* token */);
+```
 
+```ts
 // src/commands/ping.ts
 import { command } from 'ecstar';
 
@@ -55,6 +64,18 @@ export default command(() => ({
     message.channel.send('pong!');
     /* There is a more convenient way. */
     send('pong!');
+  },
+}));
+```
+
+```ts
+// src/events/ready.ts
+import { event } from 'ecstar';
+
+export default event(() => ({
+  name: 'ready', // event name
+  run({ client }) {
+    client.log.ready(client.user?.tag);
   },
 }));
 ```
