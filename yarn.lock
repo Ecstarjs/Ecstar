@@ -4977,10 +4977,10 @@ typedoc@^0.23.0:
     minimatch "^5.1.0"
     shiki "^0.11.1"
 
-typescript-transform-paths@3.4.3:
-  version "3.4.3"
-  resolved "https://registry.yarnpkg.com/typescript-transform-paths/-/typescript-transform-paths-3.4.3.tgz#e078bd2be7edcf1211d0ecef1577c88fb8a7ee5c"
-  integrity sha512-XE/FVJ7BiD6qdDFJYx9XaVJiR/43bsLB1PgghyUJF81FwWXQ9h6P6WvYOjrxMdIcZ7Elq27txievYpExiaENPQ==
+typescript-transform-paths@3.4.4:
+  version "3.4.4"
+  resolved "https://registry.yarnpkg.com/typescript-transform-paths/-/typescript-transform-paths-3.4.4.tgz#fecb7d441fc96216eb04a17b87847ffbfaeaf54d"
+  integrity sha512-b+6JTpJbO9CxVyt9+fIKXpLNUEyzrKXdflsVo/nXbQqelCYkpSsRdI+ikg3SelyE04rUeKlb+Kdt1D8Doa9JoQ==
   dependencies:
     minimatch "^3.0.4"
 
