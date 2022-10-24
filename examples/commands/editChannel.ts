@@ -2,7 +2,7 @@ import { command } from 'ecstar';
 import { ChannelType } from 'discord.js';
 
 export default command(() => ({
-  name: 'editChannel',
+  name: 'editchannel',
   guildOnly: true,
   permissions: {
     bot: ['ManageChannels'],
