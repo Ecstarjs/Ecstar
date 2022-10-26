@@ -1,5 +1,6 @@
 import { context, event } from 'ecstar';
 import { Events } from 'discord.js';
+import { getCommandName } from 'ecstar/utils/getCommandName';
 
 export default event(() => ({
   name: Events.MessageCreate,
@@ -11,9 +12,11 @@ export default event(() => ({
     )
       return;
 
-    const ctx = context(client, message);
+    const name = getCommandName(client, message.content);
 
-    const command = client.commands.get(ctx.name);
+    const command = client.commands.get(name);
+
+    const ctx = context(client, message);
 
     if (command?.guildOnly && !message.guild) {
       return message.channel.send('Can only be used with guild');
