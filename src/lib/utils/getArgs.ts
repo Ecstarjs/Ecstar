@@ -1,4 +1,4 @@
-import { parsed } from 'ecstar/utils/parser';
+import { parsed } from 'ecstar/utils/argumentParser';
 
 export type TypeList = {
   string: string;
