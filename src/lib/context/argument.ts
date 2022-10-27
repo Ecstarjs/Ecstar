@@ -1,5 +1,5 @@
 import { Client } from 'ecstar';
-import { ContextBase } from 'ecstar/context';
+import { ContextBase } from 'ecstar/context/base';
 
 export interface ArgumentContext extends ContextBase {
   type: 'argument';
