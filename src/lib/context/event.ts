@@ -1,6 +1,6 @@
 import { Message, Snowflake, TextChannel } from 'discord.js';
 import { Client } from 'ecstar';
-import { ContextBase } from 'ecstar/context';
+import { ContextBase } from 'ecstar/context/base';
 
 export interface EventContext extends ContextBase {
   type: 'event';

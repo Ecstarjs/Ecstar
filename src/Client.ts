@@ -5,7 +5,7 @@ import {
   GatewayIntentBits,
   IntentsBitField,
 } from 'discord.js';
-import { context } from 'ecstar/context';
+import { eventContext } from 'ecstar/context/event';
 import { CommandStore } from 'ecstar/store/CommandStore';
 import { EventStore } from 'ecstar/store/EventStore';
 
@@ -37,7 +37,7 @@ export class Client extends DiscordClient {
   emit(name: string, ...args: unknown[]): boolean {
     const events = this.events.get(name);
     if (events) {
-      const ctx = context(this, name);
+      const ctx = eventContext(this, name);
 
       events.forEach((event) => {
         event.run(ctx, args);

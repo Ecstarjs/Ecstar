@@ -1,7 +1,7 @@
 import { Client } from 'ecstar';
 import { Message, Snowflake, TextChannel, User } from 'discord.js';
 
-import { ContextBase } from 'ecstar/context';
+import { ContextBase } from 'ecstar/context/base';
 import { parser, parsed } from 'ecstar/utils/argumentParser';
 import { getArgs, argsType, TypeList } from 'ecstar/utils/getArgs';
 
