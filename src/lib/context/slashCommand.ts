@@ -1,4 +1,4 @@
-import { Interaction, Message, Snowflake, TextChannel } from 'discord.js';
+import { Interaction } from 'discord.js';
 import { Client } from 'ecstar';
 import { ContextBase } from 'ecstar/context/base';
 
