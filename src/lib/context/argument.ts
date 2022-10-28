@@ -3,15 +3,18 @@ import { ContextBase } from 'ecstar/context/base';
 
 export interface ArgumentContext extends ContextBase {
   type: 'argument';
+  content: string;
 }
 
 export const argumentContext = (
   client: Client,
-  name: string
+  name: string,
+  content: string
 ): ArgumentContext => {
   return {
-    name,
-    type: 'argument',
     client,
+    type: 'argument',
+    name,
+    content,
   };
 };

@@ -6,6 +6,7 @@ import {
   IntentsBitField,
 } from 'discord.js';
 import { eventContext } from 'ecstar/context/event';
+import { ArgumentStore } from 'ecstar/store/ArgumentStore';
 import { CommandStore } from 'ecstar/store/CommandStore';
 import { EventStore } from 'ecstar/store/EventStore';
 
@@ -19,6 +20,7 @@ export type EcstarClientOptions = Omit<DiscordClientOptions, 'intents'> & {
 export class Client extends DiscordClient {
   readonly commands = new CommandStore();
   readonly events = new EventStore();
+  readonly arguments = new ArgumentStore();
   readonly options!: Omit<EcstarClientOptions, 'intents'> & {
     intents: IntentsBitField;
   }; // Intents is required in Discrod.js
