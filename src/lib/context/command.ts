@@ -28,7 +28,7 @@ export const commandContext = (
     client,
     message,
     author: message.author,
-    args: new Argument(contents),
+    args: new Argument(client, contents),
     send(content, id) {
       const channel = id
         ? (client.channels.cache.get(id) as TextChannel)
