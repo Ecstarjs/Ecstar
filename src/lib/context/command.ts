@@ -2,14 +2,14 @@ import { Client, commandOptions } from 'ecstar';
 import { Message, Snowflake, TextChannel, User } from 'discord.js';
 
 import { ContextBase } from 'ecstar/context/base';
-import { parser } from 'ecstar/utils/argumentParser';
+import { Argument } from 'ecstar/utils/Argument';
 
 export interface CommandContext extends ContextBase {
   name: string;
   type: 'command';
   message: Message;
   author: User;
-  args: string[];
+  args: Argument;
   send(
     content: Parameters<TextChannel['send']>[0],
     channelID?: Snowflake
@@ -22,15 +22,13 @@ export const commandContext = (
   contents: string[],
   options: commandOptions
 ): CommandContext => {
-  const args = parser(client, contents, options);
-
   return {
     name: options.name,
     type: 'command',
     client,
     message,
     author: message.author,
-    args,
+    args: new Argument(contents),
     send(content, id) {
       const channel = id
         ? (client.channels.cache.get(id) as TextChannel)

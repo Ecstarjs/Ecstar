@@ -7,10 +7,10 @@ export default command(() => ({
   permissions: {
     bot: ['ManageChannels'],
   },
-  render({ message, args: [text] }) {
+  render({ message, args }) {
     if (message.channel.type === ChannelType.GuildText) {
       message.channel.edit({
-        name: text,
+        name: args.getValue('string'),
         reason: 'Ecstar editChannel test',
       });
     }
