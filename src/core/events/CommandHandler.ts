@@ -1,7 +1,17 @@
-import { event } from 'ecstar';
+import { Client, event } from 'ecstar';
 import { Events } from 'discord.js';
-import { getCommandName } from 'ecstar/utils/getCommandName';
 import { commandContext } from 'ecstar/context/command';
+
+export const divideCommandNameContents = (client: Client, content: string) => {
+  const mention = `<@!${client.user?.id}>`;
+  const prefix = client.options.prefix;
+  if (content.startsWith(mention)) {
+    return content.slice(mention.length).split(' ');
+  } else if (content.startsWith(prefix)) {
+    return content.slice(prefix.length).split(' ');
+  }
+  return content;
+};
 
 export default event(() => ({
   name: Events.MessageCreate,
@@ -13,13 +23,16 @@ export default event(() => ({
     )
       return;
 
-    const name = getCommandName(client, message.content);
+    const [name, ...contents] = divideCommandNameContents(
+      client,
+      message.content
+    );
 
     const command = client.commands.get(name);
 
     if (!command) return; // command is not found
 
-    const ctx = commandContext(client, message);
+    const ctx = commandContext(client, message, contents, command);
 
     if (command.guildOnly && !message.guild) {
       return message.channel.send('Can only be used with guild');

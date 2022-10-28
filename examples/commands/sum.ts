@@ -2,8 +2,7 @@ import { command } from 'ecstar';
 
 export default command(() => ({
   name: 'sum',
-  render({ send, getArgs }) {
-    const { a, b } = getArgs({ a: 'number', b: 'number' });
-    send(String(a + b));
+  render({ send, args: [a, b] }) {
+    send(String(a + b)); // 今は計算できない
   },
 }));
