@@ -8,12 +8,9 @@ export default command(() => ({
     bot: ['ManageChannels'],
   },
   render({ message, args: [text] }) {
-    if (
-      message.channel.type === ChannelType.GuildText &&
-      text.name === 'string'
-    ) {
+    if (message.channel.type === ChannelType.GuildText) {
       message.channel.edit({
-        name: text.value,
+        name: text,
         reason: 'Ecstar editChannel test',
       });
     }
