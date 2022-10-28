@@ -17,13 +17,15 @@ export default event(() => ({
 
     const command = client.commands.get(name);
 
+    if (!command) return; // command is not found
+
     const ctx = commandContext(client, message);
 
-    if (command?.guildOnly && !message.guild) {
+    if (command.guildOnly && !message.guild) {
       return message.channel.send('Can only be used with guild');
     }
 
-    if (command?.permissions) {
+    if (command.permissions) {
       if (
         command.permissions.bot &&
         !message.guild?.members.me?.permissions.has(command.permissions.bot)
@@ -37,7 +39,7 @@ export default event(() => ({
       }
     }
 
-    if (command?.render) command.render(ctx); // remove v6 majer
-    else if (command?.run) command.run(ctx);
+    if (command.render) command.render(ctx); // remove v6 majer
+    else if (command.run) command.run(ctx);
   },
 }));
