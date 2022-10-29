@@ -4,6 +4,7 @@ import { argumentContext } from 'ecstar/context/argument';
 type list = {
   string: string;
   number: number;
+  boolean: boolean;
 };
 
 type values<T extends (keyof list)[]> = T extends [infer value, ...infer rest]
